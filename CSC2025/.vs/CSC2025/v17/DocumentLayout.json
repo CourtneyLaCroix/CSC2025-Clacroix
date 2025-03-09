@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0DDD8A4-8CC2-4548-A4AE-A44F97483972}|MASM\\MASM.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\MASM\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A0DDD8A4-8CC2-4548-A4AE-A44F97483972}|MASM\\MASM.vcxproj|solutionrelative:MASM\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|solutionrelative:HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70D1BFCA-C9A7-4791-880E-9131B5723D3C}|ifStatement\\ifStatement.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\ifStatement\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{70D1BFCA-C9A7-4791-880E-9131B5723D3C}|ifStatement\\ifStatement.vcxproj|solutionrelative:ifStatement\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ifStatement\\main.asm",
+              "RelativeDocumentMoniker": "ifStatement\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ifStatement\\main.asm",
+              "RelativeToolTip": "ifStatement\\main.asm",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-09T19:54:21.704Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\MASM\\main.asm",
-              "RelativeDocumentMoniker": "MASM\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\MASM\\main.asm",
-              "RelativeToolTip": "MASM\\main.asm",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
+              "RelativeDocumentMoniker": "HelloWorld\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
+              "RelativeToolTip": "HelloWorld\\main.asm",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-05T16:03:24.572Z",
+              "WhenOpened": "2025-03-09T19:46:01.845Z",
               "EditorCaption": ""
             }
           ]
