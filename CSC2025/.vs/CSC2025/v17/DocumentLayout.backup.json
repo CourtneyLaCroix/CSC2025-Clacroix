@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|solutionrelative:HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|solutionrelative:ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
-              "RelativeDocumentMoniker": "HelloWorld\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
-              "RelativeToolTip": "HelloWorld\\main.asm",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm",
+              "RelativeDocumentMoniker": "ConsoleIO\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm*",
+              "RelativeToolTip": "ConsoleIO\\main.asm*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-10T04:53:39.595Z",
+              "WhenOpened": "2025-03-10T05:22:18.532Z",
               "EditorCaption": ""
             }
           ]

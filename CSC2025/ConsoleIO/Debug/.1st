@@ -1,0 +1,115 @@
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/09/25 23:52:00
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+				extern _GetStdHandle@4: near
+				extern _WriteConsoleA@20: near
+				extern _ReadConsoleA@20: near
+
+
+ 00000000			.data
+ 00000000 00000000		inputHandle		DD	?	
+ 00000004  00000400 [		readBuffer		DB	1024	DUP(00h) ;1024 bytes, fill with 0's
+	    00
+	   ]
+ 00000404 00000400		numCharsToRead	DD	1024	
+ 00000408 00000000		numCharsRead	DD	?
+
+ 0000040C 00000000		outputHandle	DD	?
+ 00000410 00000000		numWritten		DD	?
+ 00000414  00000400 [		writeBuffer		DB	1024	DUP(00h)
+	    00
+	   ]
+
+
+
+ 00000000			.code
+ 00000000			main PROC near
+ 00000000			_main:
+
+					;handle	= GetStdHandle(-10)
+ 00000000  6A F6			push	-10
+ 00000002  E8 00000000 E		call	_GetStdHandle@4
+ 00000007  A3 00000000 R		mov		inputHandle, eax
+
+					;handle = GetStdHandle(-11)
+ 0000000C  6A F5			push	-11
+ 0000000E  E8 00000000 E		call	_GetStdHandle@4
+ 00000013  A3 0000040C R		mov outputHandle, eax
+
+					;ReadConsole(handle, @buffer, numCharsToRead, &numCharsRead, null)
+ 00000018  6A 00			push	0
+ 0000001A  68 00000408 R		push	offset numCharsRead
+ 0000001F  FF 35 00000404 R		push	numCharsToRead
+ 00000025  68 00000004 R		push	offset readBuffer
+ 0000002A  FF 35 00000000 R		push	inputHandle
+ 00000030  E8 00000000 E		call	_ReadConsoleA@20
+
+					;WriteConsole(handle, &buffer, numCharsToWrite, &numWritten, null)
+ 00000035  6A 00			push 0
+ 00000037  68 00000410 R		push offset numWritten
+ 0000003C  FF 35 00000408 R		push numCharsRead
+ 00000042  68 00000004 R		push offset readBuffer
+ 00000047  FF 35 0000040C R		push outputHandle
+ 0000004D  E8 00000000 E		call _WriteConsoleA@20
+
+
+ 00000052  6A 00			push	0
+ 00000054  E8 00000000 E		call	_ExitProcess@4
+
+ 00000059			main ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/09/25 23:52:00
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000814 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000059 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000059 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+_GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
+_ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
+_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
+inputHandle  . . . . . . . . . .	DWord	 00000000 _DATA	
+numCharsRead . . . . . . . . . .	DWord	 00000408 _DATA	
+numCharsToRead . . . . . . . . .	DWord	 00000404 _DATA	
+numWritten . . . . . . . . . . .	DWord	 00000410 _DATA	
+outputHandle . . . . . . . . . .	DWord	 0000040C _DATA	
+readBuffer . . . . . . . . . . .	Byte	 00000004 _DATA	
+writeBuffer  . . . . . . . . . .	Byte	 00000414 _DATA	
+
+	   0 Warnings
+	   0 Errors
