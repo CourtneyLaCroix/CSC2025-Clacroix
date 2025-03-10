@@ -1,0 +1,81 @@
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/10/25 10:02:48
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+				extern _WriteConsoleA@20: near
+				extern _GetStdHandle@4: near
+
+
+ 00000000			.data
+
+
+ 00000000			.code
+
+ 00000000			main PROC near
+ 00000000			_main:
+
+ 00000000  B9 0000000A			mov		ecx, 10
+
+ 00000005			_loop:
+ 00000005  83 F9 00			cmp		ecx, 0
+ 00000008  74 07			jz		_exit
+					
+ 0000000A  03 C1			add		eax, ecx
+ 0000000C  83 C1 FF			add		ecx, -1
+ 0000000F  EB F4			jmp		_loop
+
+ 00000011			_exit:
+
+ 00000011  6A 00			push	0
+ 00000013  E8 00000000 E		call	_ExitProcess@4
+
+ 00000018			main ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/10/25 10:02:48
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000018 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000018 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+  _loop  . . . . . . . . . . . .	L Near	 00000005 _TEXT	
+  _exit  . . . . . . . . . . . .	L Near	 00000011 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+_GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
+_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
+
+	   0 Warnings
+	   0 Errors

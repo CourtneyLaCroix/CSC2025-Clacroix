@@ -1,0 +1,113 @@
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/10/25 09:37:53
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+				extern _WriteConsoleA@20: near
+				extern _GetStdHandle@4: near
+
+ 00000000			.data
+ 00000000 54 68 65 20 6E	neg_msg		DB 'The number is negative'
+	   75 6D 62 65 72
+	   20 69 73 20 6E
+	   65 67 61 74 69
+	   76 65
+ 00000016 54 68 65 20 6E	pos_msg		DB 'The number is positive'
+	   75 6D 62 65 72
+	   20 69 73 20 70
+	   6F 73 69 74 69
+	   76 65
+ 0000002C 0000			written		DW	?
+ 0000002E 00000000		handle		DD	?
+
+ 00000000			.code
+ 00000000			main PROC near
+ 00000000			_main:
+
+
+ 00000000  B9 00000056			mov		ecx, 056h
+ 00000005  83 F9 00			cmp		ecx, 0
+ 00000008  78 07			js		_negative ; if cmp is negative, go to this flag
+
+ 0000000A  BB 00000016 R		mov		ebx, offset pos_msg
+ 0000000F  EB 05			jmp		_write_console
+
+
+ 00000011			_negative:
+ 00000011  BB 00000000 R		mov ebx, offset neg_msg
+
+ 00000016			_write_console:
+
+
+					; Get stdout file handle
+					; handle = GetstdHandle(-11)
+ 00000016  6A F5			push	-11
+ 00000018  E8 00000000 E		call	_GetstdHandle@4
+ 0000001D  A3 0000002E R		mov		handle, eax
+
+					; WriteConsole(handle, &msg, 22, &written, 0)
+ 00000022  6A 00			push	0
+ 00000024  68 0000002C R		push	offset written
+ 00000029  6A 16			push	22
+ 0000002B  53				push	ebx
+ 0000002C  FF 35 0000002E R		push	handle
+ 00000032  E8 00000000 E		call	_WriteConsoleA@20
+
+
+ 00000037  6A 00			push	0
+ 00000039  E8 00000000 E		call	_ExitProcess@4
+
+
+ 0000003E			main ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/10/25 09:37:53
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000032 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000003E Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000003E Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+  _negative  . . . . . . . . . .	L Near	 00000011 _TEXT	
+  _write_console . . . . . . . .	L Near	 00000016 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+_GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
+_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
+handle . . . . . . . . . . . . .	DWord	 0000002E _DATA	
+neg_msg  . . . . . . . . . . . .	Byte	 00000000 _DATA	
+pos_msg  . . . . . . . . . . . .	Byte	 00000016 _DATA	
+written  . . . . . . . . . . . .	Word	 0000002C _DATA	
+
+	   0 Warnings
+	   0 Errors
