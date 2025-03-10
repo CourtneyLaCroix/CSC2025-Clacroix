@@ -2,6 +2,8 @@
 .model flat
 
 extern _ExitProcess@4: near
+extern _GetStdHandle@4: near
+extern _WriteConsoleA@20: near
 
 
 .data
@@ -16,16 +18,16 @@ _main:
 	; Get stdout file handle
 	; handle = GetstdHandle(-11)
 	push	-11
-	call	_GetstdHandle@4
+	call	_GetStdHandle@4
 	mov		out_handle, eax
 
-	; WriteConsole(handle, &msg, 13, &written, 0)
+	; WriteConsole(out_handle, &msg, 13, &written, 0)
 	push	0
 	push	offset written
 	push	13
 	push	offset msg
 	push	out_handle
-	call	WriteConsoleA@20
+	call	_WriteConsoleA@20
 
 	push	0
 	call	_ExitProcess@4

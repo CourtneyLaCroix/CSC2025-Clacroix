@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/04/25 22:38:47
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/09/25 21:17:37
 main.asm						     Page 1 - 1
 
 
@@ -9,16 +9,20 @@ main.asm						     Page 1 - 1
 
  00000000			.data
 
+
  00000000			.code
 
  00000000			main PROC near
+				_main
+main.asm(12) : error A2008:syntax error : _main
+
 
  00000000  6A 00			push	0
  00000002  E8 00000000 E		call	_ExitProcess@4
 
  00000007			main ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/04/25 22:38:47
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/09/25 21:17:37
 main.asm						     Symbols 2 - 1
 
 
@@ -56,4 +60,4 @@ Symbols:
 _ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
 
 	   0 Warnings
-	   0 Errors
+	   1 Errors

@@ -1,2 +1,3 @@
 ﻿  Assembling main.asm...
-  MASM.vcxproj -> C:\Users\court\CSC2025-CLaCroix\CSC2025\Debug\MASM.exe
+main.asm(12): error A2008: syntax error : _main
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\main.obj" /Fl"Debug\.1st" /W3 /errorReport:prompt  /Tamain.asm" exited with code 1.
