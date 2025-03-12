@@ -1,0 +1,127 @@
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/12/25 10:12:25
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+				extern _GetStdHandle@4: near
+				extern _WriteConsoleA@20: near
+				extern _ReadConsoleA@20: near
+
+ 00000000			.data
+
+ 00000000 61 62 63 64 00	alphabet		DB	'a','b','c','d', 0  ; zero without quotes, represents null character
+ 00000005 00000000		inputHandle		DD	?	
+ 00000009  00000400 [		readBuffer		DB	1024	DUP(00h) ;1024 bytes, fill with 0's
+	    00
+	   ]
+ 00000409 00000400		numCharsToRead	DD	1024	
+ 0000040D 00000000		numCharsRead	DD	?
+
+ 00000411 00000000		handle			DD	?
+ 00000415 00000000		written			DD	?
+ 00000419  00000400 [		writeBuffer		DB	1024	DUP(00h)
+	    00
+	   ]
+
+
+ 00000000			.code
+ 00000000			main PROC near
+ 00000000			_main:
+
+					; Get stdout file handle
+					; handle = GetstdHandle(-11)
+
+ 00000000  6A F5			push	-11
+ 00000002  E8 00000000 E		call	_GetStdHandle@4
+ 00000007  A3 00000411 R		mov		handle, eax
+
+ 0000000C  BB 00000000 R		mov		ebx, offset alphabet 
+					;mov		cl, [ebx] use this as an address, bring me whatever content is in ebx to cl, 
+										;takes 4 bytes since ebx is 4 bytes
+										;if AL was used, it would take the lower 16 bits
+					;mov		esi, 0 
+
+ 00000011			_loop:
+
+ 00000011  8A 0B			mov		cl, [ebx]
+
+					;cmp		esi, 4 
+ 00000013  80 F9 00			cmp		cl, 0
+ 00000016  74 18			jz		_exit
+					
+ 00000018  6A 00			push	0
+ 0000001A  68 00000415 R		push	offset written
+ 0000001F  6A 01			push	1
+ 00000021  53				push	ebx
+ 00000022  FF 35 00000411 R		push	handle
+ 00000028  E8 00000000 E		call	_WriteConsoleA@20
+
+					;inc		esi
+ 0000002D  43				inc		ebx
+					
+ 0000002E  EB E1			jmp		_loop
+
+ 00000030			_exit:
+
+
+ 00000030  6A 00			push	0
+ 00000032  E8 00000000 E		call	_ExitProcess@4
+
+ 00000037			main ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/12/25 10:12:25
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000819 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000037 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000037 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+  _loop  . . . . . . . . . . . .	L Near	 00000011 _TEXT	
+  _exit  . . . . . . . . . . . .	L Near	 00000030 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+_GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
+_ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
+_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
+alphabet . . . . . . . . . . . .	Byte	 00000000 _DATA	
+handle . . . . . . . . . . . . .	DWord	 00000411 _DATA	
+inputHandle  . . . . . . . . . .	DWord	 00000005 _DATA	
+numCharsRead . . . . . . . . . .	DWord	 0000040D _DATA	
+numCharsToRead . . . . . . . . .	DWord	 00000409 _DATA	
+readBuffer . . . . . . . . . . .	Byte	 00000009 _DATA	
+writeBuffer  . . . . . . . . . .	Byte	 00000419 _DATA	
+written  . . . . . . . . . . . .	DWord	 00000415 _DATA	
+
+	   0 Warnings
+	   0 Errors

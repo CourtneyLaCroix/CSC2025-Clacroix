@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C86DCB84-D737-459A-961F-DC28CBC1FBDD}|SumOfNumbers\\SumOfNumbers.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\SumOfNumbers\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C86DCB84-D737-459A-961F-DC28CBC1FBDD}|SumOfNumbers\\SumOfNumbers.vcxproj|solutionrelative:SumOfNumbers\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{087109AD-8D70-4EB5-A834-E226981F991E}|PrintAlphabet1\\PrintAlphabet1.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\PrintAlphabet1\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{087109AD-8D70-4EB5-A834-E226981F991E}|PrintAlphabet1\\PrintAlphabet1.vcxproj|solutionrelative:PrintAlphabet1\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70D1BFCA-C9A7-4791-880E-9131B5723D3C}|ifStatement\\ifStatement.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\ifStatement\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{70D1BFCA-C9A7-4791-880E-9131B5723D3C}|ifStatement\\ifStatement.vcxproj|solutionrelative:ifStatement\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|solutionrelative:HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86DCB84-D737-459A-961F-DC28CBC1FBDD}|SumOfNumbers\\SumOfNumbers.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\SumOfNumbers\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C86DCB84-D737-459A-961F-DC28CBC1FBDD}|SumOfNumbers\\SumOfNumbers.vcxproj|solutionrelative:SumOfNumbers\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ifStatement\\main.asm",
-              "RelativeDocumentMoniker": "ifStatement\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ifStatement\\main.asm",
-              "RelativeToolTip": "ifStatement\\main.asm",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
+              "RelativeDocumentMoniker": "HelloWorld\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
+              "RelativeToolTip": "HelloWorld\\main.asm",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-10T15:45:07.046Z",
+              "WhenOpened": "2025-03-12T15:39:18.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SumOfNumbers\\main.asm",
+              "RelativeDocumentMoniker": "SumOfNumbers\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SumOfNumbers\\main.asm",
+              "RelativeToolTip": "SumOfNumbers\\main.asm",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-12T15:37:44.597Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SumOfNumbers\\main.asm",
-              "RelativeDocumentMoniker": "SumOfNumbers\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SumOfNumbers\\main.asm",
-              "RelativeToolTip": "SumOfNumbers\\main.asm",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintAlphabet1\\main.asm",
+              "RelativeDocumentMoniker": "PrintAlphabet1\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintAlphabet1\\main.asm",
+              "RelativeToolTip": "PrintAlphabet1\\main.asm",
+              "ViewState": "AgIAABcAAAAAAIBlTHgvwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-10T15:44:55.039Z",
+              "WhenOpened": "2025-03-12T15:09:13.036Z",
               "EditorCaption": ""
             }
           ]

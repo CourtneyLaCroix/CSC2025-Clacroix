@@ -9,7 +9,7 @@ extern _ExitProcess@4: near
 .code
 
 main PROC near
-_main
+_main:
 
 
 	push	0
