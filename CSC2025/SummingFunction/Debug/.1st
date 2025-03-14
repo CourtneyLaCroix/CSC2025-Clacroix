@@ -1,0 +1,96 @@
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/14/25 10:12:30
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+
+ 00000000			.data
+
+ 00000000			.code
+
+ 00000000			main PROC near
+ 00000000			_main:
+
+ 00000000  BE 00000017			mov		esi, 23
+ 00000005  BF 00000022			mov		edi, 34
+					
+ 0000000A  57				push	edi
+ 0000000B  56				push	esi
+ 0000000C  E8 00000007			call	sum_two_num
+					
+
+
+ 00000011  6A 00			push	0
+ 00000013  E8 00000000 E		call	_ExitProcess@4
+
+
+
+ 00000018			main ENDP
+
+ 00000018			sum_two_num PROC	near
+
+					;Prolog
+ 00000018  55				push	ebp			;save caller's stackframe
+ 00000019  8B EC			mov		ebp, esp	;set base of current stack frame
+ 0000001B  83 EC 04			sub		esp, 4		;space for local variable
+ 0000001E  57				push	edi		;callee saved register
+ 0000001F  56				push	esi		;callee saved register
+
+					;Subroutine
+ 00000020  8B 7D 08			mov		edi, [ebp+8]	;first arg
+ 00000023  8B 75 0C			mov		esi, [ebp+12]	;second arg
+ 00000026  03 FE			add		edi, esi		;takes the value of esi, adds it to edi and stores it in edi
+ 00000028  8B C7			mov		eax, edi
+
+					;Epilogue
+ 0000002A  5E				pop		esi
+ 0000002B  5F				pop		edi
+ 0000002C  8B E5			mov		esp, ebp	;snap back to EBP
+ 0000002E  5D				pop		ebp			;restore callers EBP
+ 0000002F  C3				ret
+ 00000030			sum_two_num ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/14/25 10:12:30
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000030 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000018 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+sum_two_num  . . . . . . . . . .	P Near	 00000018 _TEXT	Length= 00000018 Public
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+
+	   0 Warnings
+	   0 Errors
