@@ -1,0 +1,109 @@
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 12:43:18
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+				extern _GetStdHandle@4: near
+				extern _WriteConsoleA@20: near
+
+ 00000000			.data
+					
+ 00000000 0000000A			num1			DD	10
+ 00000004 00000014			num2			DD	20
+ 00000008 0000001E			num3			DD	30
+ 0000000C 00000028			num4			DD	40
+
+ 00000010 00000000			handle			DD	?
+ 00000014 00000000			written			DD	?
+ 00000018  00000400 [			writeBuffer		DB	1024	DUP(00h)
+	    00
+	   ]
+
+ 00000000			.code
+
+ 00000000			main PROC near
+ 00000000			_main:
+
+					; Get stdout file handle
+					; handle = GetstdHandle(-11)
+
+ 00000000  6A F5			push	-11
+ 00000002  E8 00000000 E		call	_GetStdHandle@4
+ 00000007  A3 00000010 R		mov		handle, eax
+
+ 0000000C  BF 00000000 R		mov		edi, offset num1
+ 00000011  B9 00000004 R		mov		ecx, offset num2
+ 00000016  BA 00000008 R		mov		edx, offset num3
+ 0000001B  BB 0000000C R		mov		ebx, offset num4
+
+
+
+ 00000020  87 FB			xchg edi, ebx	;addresses exchanged when stepping through debugger
+ 00000022  87 CB			xchg ecx, ebx	;same as above
+
+					;ask about why this wouldn't print later
+ 00000024  6A 00			push	0
+ 00000026  68 00000014 R		push	offset written
+ 0000002B  6A 40			push	64
+ 0000002D  68 00000000 R		push	offset num1
+ 00000032  FF 35 00000010 R		push	handle
+ 00000038  E8 00000000 E		call	_WriteConsoleA@20
+
+
+ 0000003D  6A 00			push	0
+ 0000003F  E8 00000000 E		call	_ExitProcess@4
+
+ 00000044			main ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 12:43:18
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000418 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000044 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000044 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+_GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
+_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
+handle . . . . . . . . . . . . .	DWord	 00000010 _DATA	
+num1 . . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+num2 . . . . . . . . . . . . . .	DWord	 00000004 _DATA	
+num3 . . . . . . . . . . . . . .	DWord	 00000008 _DATA	
+num4 . . . . . . . . . . . . . .	DWord	 0000000C _DATA	
+writeBuffer  . . . . . . . . . .	Byte	 00000018 _DATA	
+written  . . . . . . . . . . . .	DWord	 00000014 _DATA	
+
+	   0 Warnings
+	   0 Errors

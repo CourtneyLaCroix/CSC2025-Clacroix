@@ -31,7 +31,7 @@ _main:
 	;handle = GetStdHandle(-11)
 	push	-11
 	call	_GetStdHandle@4
-	mov outputHandle, eax
+	mov		outputHandle, eax
 
 	;ReadConsole(handle, @buffer, numCharsToRead, &numCharsRead, null)
 	push	0

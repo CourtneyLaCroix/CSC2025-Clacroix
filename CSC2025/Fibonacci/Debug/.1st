@@ -1,0 +1,79 @@
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 12:24:26
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+
+ 00000000			.data
+ 00000000 00000000		fibN    DWORD   ?  ;how many times to preform seq
+
+ 00000000			.code
+
+
+				;fib(1) = 1, fib(2) = 1, fib(n) = fib(n-1) + fib(n-2)
+ 00000000			main PROC near
+ 00000000			_main:
+ 00000000  B9 00000009		    mov   ecx, 9    ;this is my nth term
+ 00000005  B8 00000000		    mov   eax, 0    ; stores fib n in member, and fib(n-2) at start of loop
+ 0000000A  BA 00000001		    mov   edx, 1    ; fib(n-1)
+ 0000000F  BB 00000000		    mov   ebx, 0    ; fib(n-2) until moved into eax
+ 00000014  89 15 00000000 R	    mov   fibN, edx ; moves fib(n-1) 
+				    
+ 0000001A			FibLoop:
+ 0000001A  8B C3		    mov  eax, ebx   ;fib(n-2) into eax
+ 0000001C  03 C2		    add  eax, edx   ;formula to find fib.. fib(n) = fib(n-1)+fib(n-2)
+ 0000001E  A3 00000000 R	    mov  fibN, eax  ;current fib(n) from eax into the var fibN
+ 00000023  8B DA		    mov  ebx, edx   ;fib(n-1) becomes fib(n-2)
+ 00000025  8B D0		    mov  edx, eax   ;fib(n) becomes fib(n-1)
+ 00000027  E2 F1		    Loop FibLoop
+
+ 00000029  6A 00			push	0
+ 0000002B  E8 00000000 E		call	_ExitProcess@4
+
+ 00000030			main ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 12:24:26
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000004 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000030 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000030 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+  FibLoop  . . . . . . . . . . .	L Near	 0000001A _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+fibN . . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+
+	   0 Warnings
+	   0 Errors

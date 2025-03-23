@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/09/25 23:52:00
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 11:19:54
 main.asm						     Page 1 - 1
 
 
@@ -39,7 +39,7 @@ main.asm						     Page 1 - 1
 					;handle = GetStdHandle(-11)
  0000000C  6A F5			push	-11
  0000000E  E8 00000000 E		call	_GetStdHandle@4
- 00000013  A3 0000040C R		mov outputHandle, eax
+ 00000013  A3 0000040C R		mov		outputHandle, eax
 
 					;ReadConsole(handle, @buffer, numCharsToRead, &numCharsRead, null)
  00000018  6A 00			push	0
@@ -63,7 +63,7 @@ main.asm						     Page 1 - 1
 
  00000059			main ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/09/25 23:52:00
+Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 11:19:54
 main.asm						     Symbols 2 - 1
 
 
