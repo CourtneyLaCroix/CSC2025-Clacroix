@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 12:43:18
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/24/25 10:41:28
 main.asm						     Page 1 - 1
 
 
@@ -34,31 +34,35 @@ main.asm						     Page 1 - 1
  00000002  E8 00000000 E		call	_GetStdHandle@4
  00000007  A3 00000010 R		mov		handle, eax
 
- 0000000C  BF 00000000 R		mov		edi, offset num1
- 00000011  B9 00000004 R		mov		ecx, offset num2
- 00000016  BA 00000008 R		mov		edx, offset num3
- 0000001B  BB 0000000C R		mov		ebx, offset num4
+ 0000000C  8B 3D 00000000 R		mov		edi, num1
+ 00000012  8B 0D 00000004 R		mov		ecx, num2
+ 00000018  BA 00000008 R		mov		edx, offset num3
+ 0000001D  BB 0000000C R		mov		ebx, offset num4
 
 
 
- 00000020  87 FB			xchg edi, ebx	;addresses exchanged when stepping through debugger
- 00000022  87 CB			xchg ecx, ebx	;same as above
+ 00000022  87 3B			xchg	edi, [ebx]	;addresses exchanged when stepping through debugger
+ 00000024  87 0A			xchg	ecx, [edx]	;same as above
+
+ 00000026  89 3D 00000000 R		mov		num1, edi
+ 0000002C  89 0D 00000004 R		mov		num2, ecx
+
 
 					;ask about why this wouldn't print later
- 00000024  6A 00			push	0
- 00000026  68 00000014 R		push	offset written
- 0000002B  6A 40			push	64
- 0000002D  68 00000000 R		push	offset num1
- 00000032  FF 35 00000010 R		push	handle
- 00000038  E8 00000000 E		call	_WriteConsoleA@20
+ 00000032  6A 00			push	0
+ 00000034  68 00000014 R		push	offset written
+ 00000039  6A 04			push	4
+ 0000003B  51				push	ecx
+ 0000003C  FF 35 00000010 R		push	handle
+ 00000042  E8 00000000 E		call	_WriteConsoleA@20
 
 
- 0000003D  6A 00			push	0
- 0000003F  E8 00000000 E		call	_ExitProcess@4
+ 00000047  6A 00			push	0
+ 00000049  E8 00000000 E		call	_ExitProcess@4
 
- 00000044			main ENDP
+ 0000004E			main ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34808.0	    03/23/25 12:43:18
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/24/25 10:41:28
 main.asm						     Symbols 2 - 1
 
 
@@ -70,14 +74,14 @@ Segments and Groups:
 
 FLAT . . . . . . . . . . . . . .	GROUP
 _DATA  . . . . . . . . . . . . .	32 Bit	 00000418 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000044 Para	  Public  'CODE'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000004E Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000044 Public
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000004E Public
   _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
 
 

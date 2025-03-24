@@ -28,21 +28,25 @@ _main:
 	call	_GetStdHandle@4
 	mov		handle, eax
 
-	mov		edi, offset num1
-	mov		ecx, offset num2
+	mov		edi, num1
+	mov		ecx, num2
 	mov		edx, offset num3
 	mov		ebx, offset num4
 
 
 
-	xchg edi, ebx	;addresses exchanged when stepping through debugger
-	xchg ecx, ebx	;same as above
+	xchg	edi, [ebx]	;addresses exchanged when stepping through debugger
+	xchg	ecx, [edx]	;same as above
+
+	mov		num1, edi
+	mov		num2, ecx
+
 
 	;ask about why this wouldn't print later
 	push	0
 	push	offset written
-	push	64
-	push	offset num1
+	push	4
+	push	ecx
 	push	handle
 	call	_WriteConsoleA@20
 

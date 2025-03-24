@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{98EF3699-5681-46EC-8789-8D35982BB96F}|Exchange\\Exchange.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\Exchange\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{98EF3699-5681-46EC-8789-8D35982BB96F}|Exchange\\Exchange.vcxproj|solutionrelative:Exchange\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|solutionrelative:HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|solutionrelative:Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|solutionrelative:ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|solutionrelative:HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,31 +32,44 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm",
-              "RelativeDocumentMoniker": "Fibonacci\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm",
-              "RelativeToolTip": "Fibonacci\\main.asm",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA/AAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Exchange\\main.asm",
+              "RelativeDocumentMoniker": "Exchange\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Exchange\\main.asm",
+              "RelativeToolTip": "Exchange\\main.asm",
+              "ViewState": "AgIAABwAAAAAAACA4Dv+vyEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-23T17:29:02.034Z",
+              "WhenOpened": "2025-03-24T15:19:46.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm",
+              "RelativeDocumentMoniker": "Fibonacci\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm",
+              "RelativeToolTip": "Fibonacci\\main.asm",
+              "ViewState": "AgIAAAsAAAAAAAAAUFX1vxcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-23T17:29:02.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
               "RelativeDocumentMoniker": "HelloWorld\\main.asm",
               "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
               "RelativeToolTip": "HelloWorld\\main.asm",
-              "ViewState": "AgIAABEAAAAAAAAABAAmwAkAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-03-23T17:23:47.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm",
               "RelativeDocumentMoniker": "ConsoleIO\\main.asm",
@@ -60,8 +77,7 @@
               "RelativeToolTip": "ConsoleIO\\main.asm",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-23T17:15:55.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-23T17:15:55.391Z"
             }
           ]
         }
