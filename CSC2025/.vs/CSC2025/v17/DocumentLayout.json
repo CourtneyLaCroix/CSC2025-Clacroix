@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|solutionrelative:Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|solutionrelative:PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98EF3699-5681-46EC-8789-8D35982BB96F}|Exchange\\Exchange.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Exchange\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{98EF3699-5681-46EC-8789-8D35982BB96F}|Exchange\\Exchange.vcxproj|solutionrelative:Exchange\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{087109AD-8D70-4EB5-A834-E226981F991E}|PrintAlphabet1\\PrintAlphabet1.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\PrintAlphabet1\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{087109AD-8D70-4EB5-A834-E226981F991E}|PrintAlphabet1\\PrintAlphabet1.vcxproj|solutionrelative:PrintAlphabet1\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|solutionrelative:HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|solutionrelative:ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{FAE3872C-8507-4F71-8A30-CFB94D785E37}|SummingFunction\\SummingFunction.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\SummingFunction\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FAE3872C-8507-4F71-8A30-CFB94D785E37}|SummingFunction\\SummingFunction.vcxproj|solutionrelative:SummingFunction\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,50 +28,40 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Exchange\\main.asm",
-              "RelativeDocumentMoniker": "Exchange\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Exchange\\main.asm",
-              "RelativeToolTip": "Exchange\\main.asm",
-              "ViewState": "AgIAAB0AAAAAAADDpBMtwCEAAAAWAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintAlphabet1\\main.asm",
+              "RelativeDocumentMoniker": "PrintAlphabet1\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintAlphabet1\\main.asm",
+              "RelativeToolTip": "PrintAlphabet1\\main.asm",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-24T15:19:46.345Z"
+              "WhenOpened": "2025-03-30T23:40:38.417Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm",
-              "RelativeDocumentMoniker": "Fibonacci\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm",
-              "RelativeToolTip": "Fibonacci\\main.asm",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABcAAAAEAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeDocumentMoniker": "PrintLine\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeToolTip": "PrintLine\\main.asm",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-23T17:29:02.034Z",
+              "WhenOpened": "2025-03-30T23:38:54.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
-              "RelativeDocumentMoniker": "HelloWorld\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
-              "RelativeToolTip": "HelloWorld\\main.asm",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SummingFunction\\main.asm",
+              "RelativeDocumentMoniker": "SummingFunction\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SummingFunction\\main.asm",
+              "RelativeToolTip": "SummingFunction\\main.asm",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-23T17:23:47.442Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm",
-              "RelativeDocumentMoniker": "ConsoleIO\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm",
-              "RelativeToolTip": "ConsoleIO\\main.asm",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-23T17:15:55.391Z"
+              "WhenOpened": "2025-03-30T23:35:14.937Z",
+              "EditorCaption": ""
             }
           ]
         }

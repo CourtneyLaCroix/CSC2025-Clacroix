@@ -35,7 +35,7 @@ _main:
 
 
 
-	xchg	edi, [ebx]	;addresses exchanged when stepping through debugger
+	xchg	edi, [ebx]	;addresses AND values exchanged when stepping through debugger
 	xchg	ecx, [edx]	;same as above
 
 	mov		num1, edi
