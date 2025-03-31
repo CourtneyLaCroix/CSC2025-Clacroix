@@ -1,0 +1,87 @@
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/30/25 18:53:38
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+
+ 00000000			.data
+
+
+ 00000000			.code
+
+ 00000000			main PROC near
+ 00000000			_main:
+					
+ 00000000  B8 00000001			mov		eax, 1		;eax should take the value of n		next
+ 00000005  BA 00000001			mov		edx, 1		;fib(n-1)							current
+ 0000000A  BB 00000001			mov		ebx, 1		;fib(n-2) until moved into eax		prev
+
+ 0000000F  B9 00000005			mov		ecx, 5		;num to cmp to 
+
+ 00000014				_fib:
+ 00000014  3B C1			cmp		eax, ecx
+					;jae		_exit:
+
+
+ 00000016  03 D3			add		edx, ebx			;next = current + previous
+ 00000018  03 C2			add		eax, edx
+ 0000001A  8B DA			mov		ebx, edx			;prev = current
+ 0000001C  8B D0			mov		edx, eax			;current = next;
+
+
+ 0000001E  EB F4			jmp		_fib
+
+
+ 00000020				_exit:
+
+
+ 00000020  6A 00			push	0
+ 00000022  E8 00000000 E		call	_ExitProcess@4
+
+ 00000027			main ENDP
+				END
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/30/25 18:53:38
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000027 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000027 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+  _fib . . . . . . . . . . . . .	L Near	 00000014 _TEXT	
+  _exit  . . . . . . . . . . . .	L Near	 00000020 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+
+	   0 Warnings
+	   0 Errors
