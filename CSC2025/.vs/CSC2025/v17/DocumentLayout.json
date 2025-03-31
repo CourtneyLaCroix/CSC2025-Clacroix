@@ -3,15 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|solutionrelative:PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C9D45EC6-77F5-4146-A966-56E8F4447269}|FibonacciJump\\FibonacciJump.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\FibonacciJump\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{C9D45EC6-77F5-4146-A966-56E8F4447269}|FibonacciJump\\FibonacciJump.vcxproj|solutionrelative:FibonacciJump\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C86DCB84-D737-459A-961F-DC28CBC1FBDD}|SumOfNumbers\\SumOfNumbers.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\SumOfNumbers\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{C86DCB84-D737-459A-961F-DC28CBC1FBDD}|SumOfNumbers\\SumOfNumbers.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SumOfNumbers\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{C86DCB84-D737-459A-961F-DC28CBC1FBDD}|SumOfNumbers\\SumOfNumbers.vcxproj|solutionrelative:SumOfNumbers\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{88D04572-3E95-498B-BF6D-7E0D55531CF0}|Fibonacci\\Fibonacci.vcxproj|solutionrelative:Fibonacci\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeDocumentMoniker": "PrintLine\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeToolTip": "PrintLine\\main.asm",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-31T00:56:31.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Fibonacci\\main.asm",
               "RelativeDocumentMoniker": "Fibonacci\\main.asm",
@@ -34,12 +51,11 @@
               "RelativeToolTip": "Fibonacci\\main.asm",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-31T00:30:41.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T00:30:41.644Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SumOfNumbers\\main.asm",
               "RelativeDocumentMoniker": "SumOfNumbers\\main.asm",
@@ -47,18 +63,17 @@
               "RelativeToolTip": "SumOfNumbers\\main.asm",
               "ViewState": "AgIAAAoAAAAAAAAAAAAiwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-31T00:29:24.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T00:29:24.911Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibonacciJump\\main.asm",
               "RelativeDocumentMoniker": "FibonacciJump\\main.asm",
               "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibonacciJump\\main.asm",
               "RelativeToolTip": "FibonacciJump\\main.asm",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-03-31T00:28:04.524Z",
               "EditorCaption": ""
