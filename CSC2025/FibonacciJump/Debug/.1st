@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 11:01:16
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 15:28:47
 main.asm						     Page 1 - 1
 
 
@@ -23,7 +23,7 @@ main.asm						     Page 1 - 1
  00000014  B9 00000000			mov		ecx, 0
  00000019				_fib:
  00000019  3B F9			cmp		edi, ecx
- 0000001B  73 0B			jae		_exit   ;need to get this flag to work
+ 0000001B  74 0B			je		_exit   ;need to get this flag to work
 
 
  0000001D  03 D3			add		edx, ebx			;next = current + previous
@@ -42,7 +42,7 @@ main.asm						     Page 1 - 1
 
  0000002F			main ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 11:01:16
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 15:28:47
 main.asm						     Symbols 2 - 1
 
 

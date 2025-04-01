@@ -19,7 +19,7 @@ _main:
 	mov		ecx, 0
 	_fib:
 	cmp		edi, ecx
-	jae		_exit   ;need to get this flag to work
+	je		_exit   ;need to get this flag to work
 
 
 	add		edx, ebx			;next = current + previous
