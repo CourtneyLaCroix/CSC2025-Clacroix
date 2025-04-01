@@ -7,9 +7,9 @@ extern _WriteConsoleA@20: near
 extern _ReadConsoleA@20: near
 
 .data
-	msg		DB	'Hello World', 0   ;12 chars + the 0a, which is a newline character
+	msg			DB	'Hello World', 0   ;12 chars + the 0a, which is a newline character
 	
-	count_char	DWORD		?
+	count_char	DD		?
 	out_handle	DD		?
 	written		DD		?
 
@@ -61,12 +61,12 @@ print_line	PROC	near
 
 	push	-11
 	call	_GetStdHandle@4		; this function will return the stack before the push of -11
-	mov		out_handle, ebx
+	mov		out_handle, eax
 
 	push	0
 	push	offset written
 	push	count_char
-	push	eax
+	push	offset msg
 	push	out_handle
 	call	_WriteConsoleA@20			;returns the stack before all of the above pushes
 
