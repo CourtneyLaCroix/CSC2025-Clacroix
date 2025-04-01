@@ -1,2 +1,2 @@
 ﻿  Assembling main.asm...
-LINK : fatal error LNK1168: cannot open C:\Users\court\CSC2025-CLaCroix\CSC2025\Debug\PrintLine.exe for writing
+  PrintLine.vcxproj -> C:\Users\court\CSC2025-CLaCroix\CSC2025\Debug\PrintLine.exe

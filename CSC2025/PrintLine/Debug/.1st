@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 22:08:38
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/01/25 15:01:26
 main.asm						     Page 1 - 1
 
 
@@ -11,68 +11,82 @@ main.asm						     Page 1 - 1
 				extern _ReadConsoleA@20: near
 
  00000000			.data
- 00000000 48 65 6C 6C 6F		msg		DB	'Hello World' ,0ah   ;12 chars + the 0a, which is a newline character
+ 00000000 48 65 6C 6C 6F		msg		DB	'Hello World0', 0   ;12 chars + the 0a, which is a newline character
 	   20 57 6F 72 6C
-	   64 0A
- 0000000C = 0000000C			len		equ $ - msg				;determine the len of the str by subtracting
-													;location of the start of the string from the
-													;location after the string
-
- 0000000C 00000000			out_handle	DD		?
- 00000010 00000000			written		DD		?
+	   64 30 00
+					
+ 0000000D 00000000			count_char	DWORD		?
+ 00000011 00000000			out_handle	DD		?
+ 00000015 00000000			written		DD		?
 
  00000000			.code
 
  00000000			main	PROC	near
  00000000			_main:
+					
+ 00000000  B8 00000000 R		mov		eax, offset msg
+ 00000005  68 00000000 R		push	offset msg
+ 0000000A  E8 00000007			call	print_line
+
+
+ 0000000F  6A 00			push	0
+ 00000011  E8 00000000 E		call	_ExitProcess@4
+
+ 00000016			main ENDP
+
+ 00000016			print_line	PROC	near
+
+					;prolog
+
+ 00000016  55				push	ebp
+ 00000017  8B EC			mov		ebp, esp
+ 00000019  57				push	edi		; 
+ 0000001A  56				push	esi		;callee process
+
+
+					;Subroutine
+
+ 0000001B  BF 00000000			mov		edi, 0  ;edi is the incrimenter register
+
+ 00000020				_char_counter:	;is this called a flag??? its something you can to you
+ 00000020  8A 08			mov		cl, [eax]
+ 00000022  80 F9 00			cmp		cl, 0
+ 00000025  74 06			jz		_exit
+
+ 00000027  47				inc		edi
+ 00000028  83 C0 01			add		eax, 1
+
+ 0000002B  75 F3			jnz		_char_counter
+					
+ 0000002D				_exit:
+
+ 0000002D  89 3D 0000000D R		mov		[count_char], edi
+
 					; Get stdout file handle
 					; handle = GetstdHandle(-11)
- 00000000  6A F5			push	-11
- 00000002  E8 00000000 E		call	_GetStdHandle@4
- 00000007  A3 0000000C R		mov		out_handle, eax
 
- 0000000C  E8 00000007			call	print_line
+ 00000033  6A F5			push	-11
+ 00000035  E8 00000000 E		call	_GetStdHandle@4		; this function will return the stack before the push of -11
+ 0000003A  89 1D 00000011 R		mov		out_handle, ebx
 
-
- 00000011  6A 00			push	0
- 00000013  E8 00000000 E		call	_ExitProcess@4
-
- 00000018			main ENDP
-
- 00000018			print_line	PROC	near
-					;will take one argument, the address of a string in memory
-					;has to figure out how long the string is
-
- 00000018  55				push ebp     ; Save the old base pointer value.
- 00000019  8B EC			mov ebp, esp ; Set the new base pointer value.
- 0000001B  83 EC 04			sub esp, 4   ; Make room for one 4-byte local variable.
- 0000001E  57				push edi     ; Save the values of registers that the function
- 0000001F  56				push esi     ; will modify. This function uses EDI and ESI.
-				  ; (no need to save EBX, EBP, or ESP)
-
- 00000020  E8 00000006			call	write_console
+ 00000040  6A 00			push	0
+ 00000042  68 00000015 R		push	offset written
+ 00000047  FF 35 0000000D R		push	count_char
+ 0000004D  50				push	eax
+ 0000004E  FF 35 00000011 R		push	out_handle
+ 00000054  E8 00000000 E		call	_WriteConsoleA@20			;returns the stack before all of the above pushes
 
 					;Epilogue
- 00000025  5E				pop		esi
- 00000026  5F				pop		edi
- 00000027  8B E5			mov		esp, ebp	;snap back to EBP
- 00000029  5D				pop		ebp			;restore callers EBP
- 0000002A  C3				ret
+ 00000059  5E				pop		esi
+ 0000005A  5F				pop		edi
+ 0000005B  8B E5			mov		esp, ebp	;snap back to EBP
+ 0000005D  5D				pop		ebp			;restore callers EBP
+ 0000005E  C3				ret
 
- 0000002B			print_line	ENDP
+ 0000005F			print_line	ENDP
 
- 0000002B			write_console	PROC	near
- 0000002B  6A 00			push	0
- 0000002D  68 00000010 R		push	offset written
- 00000032  68 0000000C			push	len
- 00000037  68 00000000 R		push	offset msg
- 0000003C  FF 35 0000000C R		push	out_handle
- 00000042  E8 00000000 E		call	_WriteConsoleA@20
- 00000047  C3				ret
-
- 00000048			write_console	ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 22:08:38
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/01/25 15:01:26
 main.asm						     Symbols 2 - 1
 
 
@@ -83,18 +97,19 @@ Segments and Groups:
                 N a m e                 Size     Length   Align   Combine Class
 
 FLAT . . . . . . . . . . . . . .	GROUP
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000014 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000048 Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000019 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000005F Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000018 Public
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000016 Public
   _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
-print_line . . . . . . . . . . .	P Near	 00000018 _TEXT	Length= 00000013 Public
-write_console  . . . . . . . . .	P Near	 0000002B _TEXT	Length= 0000001D Public
+print_line . . . . . . . . . . .	P Near	 00000016 _TEXT	Length= 00000049 Public
+  _char_counter  . . . . . . . .	L Near	 00000020 _TEXT	
+  _exit  . . . . . . . . . . . .	L Near	 0000002D _TEXT	
 
 
 Symbols:
@@ -114,10 +129,10 @@ _ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
 _GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
 _ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
 _WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
-len  . . . . . . . . . . . . . .	Number	 0000000Ch   
+count_char . . . . . . . . . . .	DWord	 0000000D _DATA	
 msg  . . . . . . . . . . . . . .	Byte	 00000000 _DATA	
-out_handle . . . . . . . . . . .	DWord	 0000000C _DATA	
-written  . . . . . . . . . . . .	DWord	 00000010 _DATA	
+out_handle . . . . . . . . . . .	DWord	 00000011 _DATA	
+written  . . . . . . . . . . . .	DWord	 00000015 _DATA	
 
 	   0 Warnings
 	   0 Errors

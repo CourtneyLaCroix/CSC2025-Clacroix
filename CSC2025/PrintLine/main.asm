@@ -7,11 +7,9 @@ extern _WriteConsoleA@20: near
 extern _ReadConsoleA@20: near
 
 .data
-	msg		DB	'Hello World' ,0ah   ;12 chars + the 0a, which is a newline character
-	len		equ $ - msg				;determine the len of the str by subtracting
-									;location of the start of the string from the
-									;location after the string
-
+	msg		DB	'Hello World', 0   ;12 chars + the 0a, which is a newline character
+	
+	count_char	DWORD		?
 	out_handle	DD		?
 	written		DD		?
 
@@ -19,12 +17,9 @@ extern _ReadConsoleA@20: near
 
 main	PROC	near
 _main:
-	; Get stdout file handle
-	; handle = GetstdHandle(-11)
-	push	-11
-	call	_GetStdHandle@4
-	mov		out_handle, eax
-
+	
+	mov		eax, offset msg
+	push	offset msg
 	call	print_line
 
 
@@ -34,17 +29,46 @@ _main:
 main ENDP
 
 print_line	PROC	near
-	;will take one argument, the address of a string in memory
-	;has to figure out how long the string is
 
-	push ebp     ; Save the old base pointer value.
-	mov ebp, esp ; Set the new base pointer value.
-	sub esp, 4   ; Make room for one 4-byte local variable.
-	push edi     ; Save the values of registers that the function
-	push esi     ; will modify. This function uses EDI and ESI.
-  ; (no need to save EBX, EBP, or ESP)
+	;prolog
 
-	call	write_console
+	push	ebp
+	mov		ebp, esp
+	push	edi		; 
+	push	esi		;callee process
+
+
+	;Subroutine
+
+	mov		edi, 0  ;edi is the incrimenter register
+
+	_char_counter:	;is this called a flag??? its something you can to you
+	mov		cl, [eax]
+	cmp		cl, 0
+	jz		_exit
+
+	inc		edi
+	add		eax, 1
+
+	jnz		_char_counter
+	
+	_exit:
+
+	mov		[count_char], edi
+
+	; Get stdout file handle
+	; handle = GetstdHandle(-11)
+
+	push	-11
+	call	_GetStdHandle@4		; this function will return the stack before the push of -11
+	mov		out_handle, ebx
+
+	push	0
+	push	offset written
+	push	count_char
+	push	eax
+	push	out_handle
+	call	_WriteConsoleA@20			;returns the stack before all of the above pushes
 
 	;Epilogue
 	pop		esi
@@ -55,14 +79,4 @@ print_line	PROC	near
 
 print_line	ENDP
 
-write_console	PROC	near
-	push	0
-	push	offset written
-	push	len
-	push	offset msg
-	push	out_handle
-	call	_WriteConsoleA@20
-	ret
-
-write_console	ENDP
 END
