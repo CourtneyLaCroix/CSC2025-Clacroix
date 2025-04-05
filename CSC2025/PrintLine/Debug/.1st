@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/01/25 15:09:49
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/05/25 13:11:36
 main.asm						     Page 1 - 1
 
 
@@ -11,13 +11,13 @@ main.asm						     Page 1 - 1
 				extern _ReadConsoleA@20: near
 
  00000000			.data
- 00000000 48 65 6C 6C 6F		msg			DB	'Hello World', 0   ;12 chars + the 0a, which is a newline character
+ 00000000 48 65 6C 6C 6F		msg			DB	'Hello World!!', 0   ;12 chars + the 0a, which is a newline character
 	   20 57 6F 72 6C
-	   64 00
+	   64 21 21 00
 					
- 0000000C 00000000			count_char	DD		?
- 00000010 00000000			out_handle	DD		?
- 00000014 00000000			written		DD		?
+ 0000000E 00000000			count_char	DD		?
+ 00000012 00000000			out_handle	DD		?
+ 00000016 00000000			written		DD		?
 
  00000000			.code
 
@@ -60,20 +60,20 @@ main.asm						     Page 1 - 1
 					
  0000002D				_exit:
 
- 0000002D  89 3D 0000000C R		mov		[count_char], edi
+ 0000002D  89 3D 0000000E R		mov		[count_char], edi
 
 					; Get stdout file handle
 					; handle = GetstdHandle(-11)
 
  00000033  6A F5			push	-11
  00000035  E8 00000000 E		call	_GetStdHandle@4		; this function will return the stack before the push of -11
- 0000003A  A3 00000010 R		mov		out_handle, eax
+ 0000003A  A3 00000012 R		mov		out_handle, eax
 
  0000003F  6A 00			push	0
- 00000041  68 00000014 R		push	offset written
- 00000046  FF 35 0000000C R		push	count_char
+ 00000041  68 00000016 R		push	offset written
+ 00000046  FF 35 0000000E R		push	count_char
  0000004C  68 00000000 R		push	offset msg
- 00000051  FF 35 00000010 R		push	out_handle
+ 00000051  FF 35 00000012 R		push	out_handle
  00000057  E8 00000000 E		call	_WriteConsoleA@20			;returns the stack before all of the above pushes
 
 					;Epilogue
@@ -81,12 +81,12 @@ main.asm						     Page 1 - 1
  0000005D  5F				pop		edi
  0000005E  8B E5			mov		esp, ebp	;snap back to EBP
  00000060  5D				pop		ebp			;restore callers EBP
- 00000061  C3				ret
+ 00000061  C2 0004			ret		4
 
- 00000062			print_line	ENDP
+ 00000064			print_line	ENDP
 
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/01/25 15:09:49
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/05/25 13:11:36
 main.asm						     Symbols 2 - 1
 
 
@@ -97,8 +97,8 @@ Segments and Groups:
                 N a m e                 Size     Length   Align   Combine Class
 
 FLAT . . . . . . . . . . . . . .	GROUP
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000018 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000062 Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000001A Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000064 Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
@@ -107,7 +107,7 @@ Procedures, parameters, and locals:
 
 main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000016 Public
   _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
-print_line . . . . . . . . . . .	P Near	 00000016 _TEXT	Length= 0000004C Public
+print_line . . . . . . . . . . .	P Near	 00000016 _TEXT	Length= 0000004E Public
   _char_counter  . . . . . . . .	L Near	 00000020 _TEXT	
   _exit  . . . . . . . . . . . .	L Near	 0000002D _TEXT	
 
@@ -129,10 +129,10 @@ _ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
 _GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
 _ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
 _WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
-count_char . . . . . . . . . . .	DWord	 0000000C _DATA	
+count_char . . . . . . . . . . .	DWord	 0000000E _DATA	
 msg  . . . . . . . . . . . . . .	Byte	 00000000 _DATA	
-out_handle . . . . . . . . . . .	DWord	 00000010 _DATA	
-written  . . . . . . . . . . . .	DWord	 00000014 _DATA	
+out_handle . . . . . . . . . . .	DWord	 00000012 _DATA	
+written  . . . . . . . . . . . .	DWord	 00000016 _DATA	
 
 	   0 Warnings
 	   0 Errors

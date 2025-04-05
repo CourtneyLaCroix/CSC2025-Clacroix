@@ -3,20 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\FibRecursive\\fibRecursive.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|solutionrelative:FibRecursive\\fibRecursive.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\BuildCustomizations\\masm.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\FibRecursive\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|solutionrelative:FibRecursive\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|solutionrelative:PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FAE3872C-8507-4F71-8A30-CFB94D785E37}|SummingFunction\\SummingFunction.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SummingFunction\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{FAE3872C-8507-4F71-8A30-CFB94D785E37}|SummingFunction\\SummingFunction.vcxproj|solutionrelative:SummingFunction\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087109AD-8D70-4EB5-A834-E226981F991E}|PrintAlphabet1\\PrintAlphabet1.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintAlphabet1\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{087109AD-8D70-4EB5-A834-E226981F991E}|PrintAlphabet1\\PrintAlphabet1.vcxproj|solutionrelative:PrintAlphabet1\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B5C4C41A-C037-4401-B106-0FCF2EA84DD1}|HelloWorld\\HelloWorld.vcxproj|solutionrelative:HelloWorld\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +25,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SummingFunction\\main.asm",
-              "RelativeDocumentMoniker": "SummingFunction\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\SummingFunction\\main.asm",
-              "RelativeToolTip": "SummingFunction\\main.asm",
-              "ViewState": "AgIAACUAAADAoguw41YawDAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-31T21:40:48.305Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintAlphabet1\\main.asm",
-              "RelativeDocumentMoniker": "PrintAlphabet1\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintAlphabet1\\main.asm",
-              "RelativeToolTip": "PrintAlphabet1\\main.asm",
-              "ViewState": "AgIAAB4AAAAANLoy70INwCMAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-01T20:02:31.94Z"
+              "Title": "masm.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\BuildCustomizations\\masm.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\BuildCustomizations\\masm.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\BuildCustomizations\\masm.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\BuildCustomizations\\masm.targets",
+              "ViewState": "AgIAAD8AAAAAAAAAAADgv0UAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-04-05T20:08:24.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
-              "RelativeDocumentMoniker": "HelloWorld\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\HelloWorld\\main.asm",
-              "RelativeToolTip": "HelloWorld\\main.asm",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeDocumentMoniker": "PrintLine\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeToolTip": "PrintLine\\main.asm",
+              "ViewState": "AgIAAEUAAAAAAAAAAADwv0sAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-01T03:11:34.209Z"
+              "WhenOpened": "2025-04-05T19:14:21.82Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
-              "RelativeDocumentMoniker": "PrintLine\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm*",
-              "RelativeToolTip": "PrintLine\\main.asm*",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAD8AAAAVAAAAAAAAAA==",
+              "Title": "fibRecursive.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\fibRecursive.asm",
+              "RelativeDocumentMoniker": "FibRecursive\\fibRecursive.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\fibRecursive.asm*",
+              "RelativeToolTip": "FibRecursive\\fibRecursive.asm*",
+              "ViewState": "AgIAAA0AAAAAAAAAAADgvy4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-31T00:56:31.741Z",
+              "WhenOpened": "2025-04-05T19:18:48.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\main.asm",
+              "RelativeDocumentMoniker": "FibRecursive\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\main.asm",
+              "RelativeToolTip": "FibRecursive\\main.asm",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-05T19:14:33.475Z",
               "EditorCaption": ""
             }
           ]

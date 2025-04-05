@@ -1,0 +1,3 @@
+﻿  Assembling fibRecursive.asm...
+fibRecursive.asm(48): fatal error A1010: unmatched block nesting : fibRecursive
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\fibRecursive.obj" /Fl"Debug\.1st" /W3 /errorReport:prompt  /TafibRecursive.asm" exited with code 1.

@@ -7,7 +7,7 @@ extern _WriteConsoleA@20: near
 extern _ReadConsoleA@20: near
 
 .data
-	msg			DB	'Hello World', 0   ;12 chars + the 0a, which is a newline character
+	msg			DB	'Hello World!!', 0   ;12 chars + the 0a, which is a newline character
 	
 	count_char	DD		?
 	out_handle	DD		?
@@ -75,7 +75,7 @@ print_line	PROC	near
 	pop		edi
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP
-	ret
+	ret		4
 
 print_line	ENDP
 
