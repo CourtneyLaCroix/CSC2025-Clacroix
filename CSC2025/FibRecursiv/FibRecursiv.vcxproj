@@ -19,14 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="fibRecursive.asm" />
+    <MASM Include="fibrecur.asm" />
     <MASM Include="main.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c3e91219-3ab8-4507-8392-5f8fc284bffb}</ProjectGuid>
-    <RootNamespace>FibRecursive</RootNamespace>
+    <ProjectGuid>{d0b8df03-0682-4138-8e82-ee333347d858}</ProjectGuid>
+    <RootNamespace>FibRecursiv</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

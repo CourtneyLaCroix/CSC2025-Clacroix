@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\FibRecursive\\fibRecursive.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|solutionrelative:FibRecursive\\fibRecursive.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{D0B8DF03-0682-4138-8E82-EE333347D858}|FibRecursiv\\FibRecursiv.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\FibRecursiv\\fibrecur.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D0B8DF03-0682-4138-8E82-EE333347D858}|FibRecursiv\\FibRecursiv.vcxproj|solutionrelative:FibRecursiv\\fibrecur.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C3E91219-3AB8-4507-8392-5F8FC284BFFB}|FibRecursive\\FibRecursive.vcxproj|solutionrelative:FibRecursive\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{D0B8DF03-0682-4138-8E82-EE333347D858}|FibRecursiv\\FibRecursiv.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\FibRecursiv\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D0B8DF03-0682-4138-8E82-EE333347D858}|FibRecursiv\\FibRecursiv.vcxproj|solutionrelative:FibRecursiv\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|solutionrelative:PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "fibRecursive.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\fibRecursive.asm",
-              "RelativeDocumentMoniker": "FibRecursive\\fibRecursive.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\fibRecursive.asm*",
-              "RelativeToolTip": "FibRecursive\\fibRecursive.asm*",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAABwAAAAMAAAAAAAAAA==",
+              "Title": "fibrecur.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursiv\\fibrecur.asm",
+              "RelativeDocumentMoniker": "FibRecursiv\\fibrecur.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursiv\\fibrecur.asm",
+              "RelativeToolTip": "FibRecursiv\\fibrecur.asm",
+              "ViewState": "AgIAABAAAAAAAAAAAAAawBkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-05T19:18:48.467Z",
+              "WhenOpened": "2025-04-06T19:10:44.764Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeDocumentMoniker": "PrintLine\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeToolTip": "PrintLine\\main.asm",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-06T19:37:57.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\main.asm",
-              "RelativeDocumentMoniker": "FibRecursive\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursive\\main.asm",
-              "RelativeToolTip": "FibRecursive\\main.asm",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursiv\\main.asm",
+              "RelativeDocumentMoniker": "FibRecursiv\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibRecursiv\\main.asm",
+              "RelativeToolTip": "FibRecursiv\\main.asm",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-05T19:14:33.475Z",
+              "WhenOpened": "2025-04-06T19:08:37.772Z",
               "EditorCaption": ""
             }
           ]

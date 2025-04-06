@@ -1,4 +1,0 @@
-﻿  Assembling fibRecursive.asm...
-main.obj : error LNK2005: fibRecursive already defined in fibRecursive.obj
-LINK : error LNK2001: unresolved external symbol _main
-C:\Users\court\CSC2025-CLaCroix\CSC2025\Debug\FibRecursive.exe : fatal error LNK1120: 1 unresolved externals

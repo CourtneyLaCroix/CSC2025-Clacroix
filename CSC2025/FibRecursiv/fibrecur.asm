@@ -1,8 +1,7 @@
 .386P
 .model flat
 
-
-
+extern _ExitProcess@4: near
 
 .data
 	; expected data to be edx
@@ -14,7 +13,8 @@
 
 
 .code
-fibRecursive PROC near
+
+fibrecur	PROC	 near
 _fibRecursive:
 	;prolog
 	push	ebp
@@ -23,7 +23,7 @@ _fibRecursive:
     push    ebx     ;saved register
     push    ecx     ;saved register
   
-    mov    ecx, [ebp + 12]     ;ecx = n
+    mov    ecx, [ebp + 8]      ;ecx = n     grabs value passed ecx
     mov    ebx, 0              ;ebx = 0
     mov    eax, 1              ;eax = 1
     jmp    _fibrecurtime
@@ -47,6 +47,8 @@ _fibrecurtime:
 	ret		4
 
 
-fibRecursive ENDP
+	push	0
+	call	_ExitProcess@4
 
+fibrecur	ENDP
 END

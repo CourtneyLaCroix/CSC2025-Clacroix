@@ -1,12 +1,11 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/05/25 18:14:07
-fibRecursive.asm					     Page 1 - 1
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/06/25 13:49:20
+fibrecur.asm						     Page 1 - 1
 
 
 				.386P
 				.model flat
 
-
-
+				extern _ExitProcess@4: near
 
  00000000			.data
 					; expected data to be edx
@@ -18,7 +17,8 @@ fibRecursive.asm					     Page 1 - 1
 
 
  00000000			.code
- 00000000			fibRecursive PROC near
+
+ 00000000			fibrecur	PROC	 near
  00000000			_fibRecursive:
 					;prolog
  00000000  55				push	ebp
@@ -27,7 +27,7 @@ fibRecursive.asm					     Page 1 - 1
  00000003  53			    push    ebx     ;saved register
  00000004  51			    push    ecx     ;saved register
 				  
- 00000005  8B 4D 0C		    mov    ecx, [ebp + 12]     ;ecx = n
+ 00000005  8B 4D 08		    mov    ecx, [ebp + 8]      ;ecx = n     grabs value passed ecx
  00000008  BB 00000000		    mov    ebx, 0              ;ebx = 0
  0000000D  B8 00000001		    mov    eax, 1              ;eax = 1
  00000012  EB 07		    jmp    _fibrecurtime
@@ -51,11 +51,13 @@ fibRecursive.asm					     Page 1 - 1
  00000025  C2 0004			ret		4
 
 
- 00000028			fibRecursive ENDP
+ 00000028  6A 00			push	0
+ 0000002A  E8 00000000 E		call	_ExitProcess@4
 
+ 0000002F			fibrecur	ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/05/25 18:14:07
-fibRecursive.asm					     Symbols 2 - 1
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/06/25 13:49:20
+fibrecur.asm						     Symbols 2 - 1
 
 
 
@@ -66,14 +68,14 @@ Segments and Groups:
 
 FLAT . . . . . . . . . . . . . .	GROUP
 _DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000028 Para	  Public  'CODE'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000002F Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-fibRecursive . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000028 Public
+fibrecur . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000002F Public
   _fibRecursive  . . . . . . . .	L Near	 00000000 _TEXT	
   _fibreturning  . . . . . . . .	L Near	 00000014 _TEXT	
   _fibrecurtime  . . . . . . . .	L Near	 0000001B _TEXT	
@@ -92,6 +94,7 @@ Symbols:
 @fardata?  . . . . . . . . . . .	Text   	 FLAT
 @fardata . . . . . . . . . . . .	Text   	 FLAT
 @stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
 
 	   0 Warnings
 	   0 Errors
