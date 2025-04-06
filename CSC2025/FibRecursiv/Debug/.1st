@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/06/25 14:54:17
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/06/25 15:05:08
 main.asm						     Page 1 - 1
 
 
@@ -19,7 +19,7 @@ main.asm						     Page 1 - 1
  00000000			main PROC near
  00000000			_main:
 
- 00000000  BA 00000006			mov		edx, 6
+ 00000000  BA 00000008			mov		edx, 8
  00000005  52				push	edx
  00000006  E8 00000000 E		call	fibrecur    ;must have a ret 4
 
@@ -28,7 +28,7 @@ main.asm						     Page 1 - 1
 
  00000012			main ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/06/25 14:54:17
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/06/25 15:05:08
 main.asm						     Symbols 2 - 1
 
 

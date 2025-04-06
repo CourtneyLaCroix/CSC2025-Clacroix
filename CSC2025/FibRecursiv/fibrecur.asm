@@ -5,11 +5,9 @@ extern _ExitProcess@4: near
 
 .data
 	; expected data to be edx
-	; n is in esp + 12 store in edx
+	; n is in esp + 8 store in edx
 	; return via eax
-	; ecx = n  loaded from edx
-	; ebx = secondlast
-	; eax = last 
+	;remember to ret 4 to account for the var passed to us
 
 
 .code

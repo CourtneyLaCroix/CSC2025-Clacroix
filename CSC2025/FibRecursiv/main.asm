@@ -15,7 +15,7 @@ extern fibrecur: near
 main PROC near
 _main:
 
-	mov		edx, 6
+	mov		edx, 8
 	push	edx
 	call	fibrecur    ;must have a ret 4
 
