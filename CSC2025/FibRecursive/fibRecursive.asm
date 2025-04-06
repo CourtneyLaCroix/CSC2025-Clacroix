@@ -2,18 +2,19 @@
 .model flat
 
 
-extern _fibRecursiveA@4: near
+
 
 .data
-	;expected data to be edx
-	; paramter n is in  0x8(esp) store in edx
+	; expected data to be edx
+	; n is in esp + 12 store in edx
 	; return via eax
-	; ecx = n  (loaded from 0x(esp)
+	; ecx = n  loaded from edx
 	; ebx = secondlast
 	; eax = last 
 
 
 .code
+fibRecursive PROC near
 _fibRecursive:
 	;prolog
 	push	ebp
@@ -25,17 +26,17 @@ _fibRecursive:
     mov    ecx, [ebp + 12]     ;ecx = n
     mov    ebx, 0              ;ebx = 0
     mov    eax, 1              ;eax = 1
-    jmp    fibrecurtime
+    jmp    _fibrecurtime
 
 
-fibreturning:
-    add  eax, ebx             ; last = last + secondlast
+_fibreturning:
+    add  eax, ebx             ;last = last + secondlast
     neg  ebx
     add  ebx, eax             ;secondlast = –secondlast + last
     dec  ecx                  ;n = n – 1
-fibrecurtime:
+_fibrecurtime:
     cmp  ecx, 0
-    jne  fibreturning         ;if n != 0 goto fib1
+    jne  _fibreturning         ;if n != 0 goto fibreturning
  
      
 	;Epilogue
@@ -45,5 +46,7 @@ fibrecurtime:
 	pop		ebp			;restore callers EBP
 	ret		4
 
+
 fibRecursive ENDP
+
 END

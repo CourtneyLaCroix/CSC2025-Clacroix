@@ -2,19 +2,20 @@
 .model flat
 
 extern _ExitProcess@4: near
-extern _fibRecursiveA@4: near
+include	fibRecursive.asm
 
 .data
-
-mov		edx, 6
-push	edx
-call	_fibRecursive
 
 
 .code
 
 main PROC near
 _main:
+
+	mov		edx, 6
+	push	edx
+	call	fibRecursive
+
 
 
 	push	0
