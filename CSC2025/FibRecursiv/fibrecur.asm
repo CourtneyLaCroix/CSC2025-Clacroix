@@ -19,32 +19,51 @@ _fibRecursive:
 	;prolog
 	push	ebp
 	mov		ebp, esp
+	sub		esp, 4
 
-    push    ebx     ;saved register
+	push    ebx     ;saved register
     push    ecx     ;saved register
-  
-    mov    ecx, [ebp + 8]      ;ecx = n     grabs value passed ecx
-    mov    ebx, 0              ;ebx = 0
-    mov    eax, 1              ;eax = 1
-    jmp    _fibrecurtime
+
+	mov    ebx, 0              ;ebx = 0 basecase
+	mov    ecx, [ebp + 8]      ;ecx = n     grabs value passed ecx
+
+	cmp		ecx, 0
+	jne		_fibreturning
+	
+	mov	    eax, 0				;eax should store the nth resulth 
+	jmp		_epilogue
 
 
 _fibreturning:
-    add  eax, ebx             ;last = last + secondlast
-    neg  ebx
-    add  ebx, eax             ;secondlast = –secondlast + last
-    dec  ecx                  ;n = n – 1
+    cmp		ecx, 1
+	jne		_fibrecurtime
+	mov		eax, 1
+	jmp		_epilogue
 _fibrecurtime:
-    cmp  ecx, 0
-    jne  _fibreturning         ;if n != 0 goto fibreturning
- 
+
+	mov		eax, [ebp + 8]
+	dec		eax
+	push	eax
+	call	fibrecur
+
+	mov		[ebp - 4], eax
+	mov		eax, [ebp + 8]
+	sub		eax, 2	
+	push	eax
+	call	fibrecur
+	add		eax, [ebp - 4]
+
+
      
-	;Epilogue
-	pop		ecx
-    pop     ebx
+	_epilogue:
+
+	push    ecx     ;returning saved values
+    push    ebx     ;returning saved values
+
+	add		esp, 4
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP
-	ret		4
+	ret		4		;we are returning one integer
 
 
 	push	0
