@@ -7,7 +7,7 @@ extern _WriteConsoleA@20: near
 extern _ReadConsoleA@20: near
 
 .data
-	msg			DB	'Hello World!!', 0   ;12 chars + the 0a, which is a newline character
+	msg			DB	'Hello World!!!', 0   ;12 chars + the 0a, which is a newline character
 	
 	count_char	DD		?
 	out_handle	DD		?

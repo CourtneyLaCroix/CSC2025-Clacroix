@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 15:28:47
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/12/25 14:14:33
 main.asm						     Page 1 - 1
 
 
@@ -8,6 +8,7 @@ main.asm						     Page 1 - 1
 				extern _ExitProcess@4: near
 
  00000000			.data
+ 00000000 00000000		fibN    DWORD   ? 
 
 
  00000000			.code
@@ -15,34 +16,37 @@ main.asm						     Page 1 - 1
  00000000			main PROC near
  00000000			_main:
 					
- 00000000  B8 00000001			mov		eax, 1		;eax should take the value of n		next
+ 00000000  B8 00000005			mov		eax, 5		;eax should take the value of n		next
  00000005  BA 00000001			mov		edx, 1		;fib(n-1)							current
  0000000A  BB 00000001			mov		ebx, 1		;fib(n-2) until moved into eax		prev
 
- 0000000F  BF 00000005			mov		edi, 5		;num to cmp to 
- 00000014  B9 00000000			mov		ecx, 0
- 00000019				_fib:
- 00000019  3B F9			cmp		edi, ecx
- 0000001B  74 0B			je		_exit   ;need to get this flag to work
-
-
- 0000001D  03 D3			add		edx, ebx			;next = current + previous
- 0000001F  8B C2			mov		eax, edx
- 00000021  8B DA			mov		ebx, edx			;prev = current
- 00000023  8B D0			mov		edx, eax			;current = next;
- 00000025  41				inc		ecx
+ 0000000F  8B F8			mov		edi, eax	;num to cmp to 
+ 00000011  B8 00000000			mov		eax, 0
 					
- 00000026  EB F1			jmp		_fib
+ 00000016				_fib:
+					
+ 00000016  83 FF 00			cmp		edi, 0
+ 00000019  74 10			je		_exit   
+					
 
- 00000028			_exit:
+ 0000001B  8B C3			mov  eax, ebx   ;fib(n-2) into eax
+ 0000001D  03 C2		    add  eax, edx   ;formula to find fib.. fib(n) = fib(n-1)+fib(n-2)
+ 0000001F  A3 00000000 R	    mov  fibN, eax  ;current fib(n) from eax into the var fibN
+ 00000024  8B DA		    mov  ebx, edx   ;fib(n-1) becomes fib(n-2)
+ 00000026  8B D0		    mov  edx, eax   ;fib(n) becomes fib(n-1)
+
+ 00000028  4F				dec		edi
+ 00000029  EB EB			jmp		_fib
+
+ 0000002B			_exit:
 
 
- 00000028  6A 00			push	0
- 0000002A  E8 00000000 E		call	_ExitProcess@4
+ 0000002B  6A 00			push	0
+ 0000002D  E8 00000000 E		call	_ExitProcess@4
 
- 0000002F			main ENDP
+ 00000032			main ENDP
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    03/31/25 15:28:47
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/12/25 14:14:33
 main.asm						     Symbols 2 - 1
 
 
@@ -53,18 +57,18 @@ Segments and Groups:
                 N a m e                 Size     Length   Align   Combine Class
 
 FLAT . . . . . . . . . . . . . .	GROUP
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 0000002F Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000004 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000032 Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000002F Public
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000032 Public
   _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
-  _fib . . . . . . . . . . . . .	L Near	 00000019 _TEXT	
-  _exit  . . . . . . . . . . . .	L Near	 00000028 _TEXT	
+  _fib . . . . . . . . . . . . .	L Near	 00000016 _TEXT	
+  _exit  . . . . . . . . . . . .	L Near	 0000002B _TEXT	
 
 
 Symbols:
@@ -81,6 +85,7 @@ Symbols:
 @fardata . . . . . . . . . . . .	Text   	 FLAT
 @stack . . . . . . . . . . . . .	Text   	 FLAT
 _ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+fibN . . . . . . . . . . . . . .	DWord	 00000000 _DATA	
 
 	   0 Warnings
 	   0 Errors

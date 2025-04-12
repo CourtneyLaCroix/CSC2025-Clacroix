@@ -4,6 +4,7 @@
 extern _ExitProcess@4: near
 
 .data
+fibN    DWORD   ? 
 
 
 .code
@@ -11,22 +12,25 @@ extern _ExitProcess@4: near
 main PROC near
 _main:
 	
-	mov		eax, 1		;eax should take the value of n		next
+	mov		eax, 8		;eax should take the value of n		next
 	mov		edx, 1		;fib(n-1)							current
-	mov		ebx, 1		;fib(n-2) until moved into eax		prev
+	mov		ebx, 0		;fib(n-2) until moved into eax		prev
 
-	mov		edi, 5		;num to cmp to 
-	mov		ecx, 0
+	mov		edi, eax	;num to cmp to 
+	mov		eax, 0
+	
 	_fib:
-	cmp		edi, ecx
-	je		_exit   ;need to get this flag to work
+	dec		edi
+	cmp		edi, 0
+	je		_exit   
+	
 
+	mov  eax, ebx   ;fib(n-2) into eax
+    add  eax, edx   ;formula to find fib.. fib(n) = fib(n-1)+fib(n-2)
+    mov  fibN, eax  ;current fib(n) from eax into the var fibN
+    mov  ebx, edx   ;fib(n-1) becomes fib(n-2)
+    mov  edx, eax   ;fib(n) becomes fib(n-1)
 
-	add		edx, ebx			;next = current + previous
-	mov		eax, edx
-	mov		ebx, edx			;prev = current
-	mov		edx, eax			;current = next;
-	inc		ecx
 	
 	jmp		_fib
 
