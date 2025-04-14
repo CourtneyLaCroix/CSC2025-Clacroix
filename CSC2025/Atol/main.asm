@@ -59,6 +59,7 @@ AToi	PROC  near
 
 	mov		ebx, offset readBuffer
 	mov		answer, 0		 ;ensure answer is set to 0 for correct total
+	mov		edi, 0
 	_atoi:
 	mov		dx, [ebx]
 	cmp		dx, 0
@@ -66,10 +67,10 @@ AToi	PROC  near
 
 	mov		eax, edx
 
-	sub		eax, 48
-	imul	ecx, eax		;it wasn't happy with just 10, so I put 10 in ecx so it would stop crying
-	add		answer, eax
-	add		ebx, 1
+	sub		eax, 48				;covert from ASCII to Decimal
+	imul	ecx, edi			;it wasn't happy with just 10, so I put 10 in ecx so it would stop crying    mul total by 10
+	add		edi, eax			;add current digit to total
+	add		ebx, 1				;goto next byte in string
 
 
 	jnz		_atoi
@@ -78,7 +79,7 @@ AToi	PROC  near
 
 
 	_exit:
-
+	mov		answer, edi
 	add		answer, 23
 
 	mov		esp, ebp	;snap back to EBP
