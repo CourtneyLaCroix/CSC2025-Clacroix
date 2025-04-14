@@ -42,7 +42,7 @@ print_line	PROC	near
 
 	mov		edi, 0  ;edi is the incrimenter register
 
-	_char_counter:	;is this called a flag??? its something you can to you
+	_char_counter:	;this is called a label 
 	mov		cl, [eax]
 	cmp		cl, 0
 	jz		_exit

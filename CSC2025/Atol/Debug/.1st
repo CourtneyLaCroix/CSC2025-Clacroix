@@ -1,0 +1,154 @@
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/13/25 19:48:57
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+				extern _GetStdHandle@4: near
+				extern _ReadConsoleA@20: near
+
+ 00000000			.data
+ 00000000 00000000		inputHandle		DD	?	
+ 00000004  00000400 [		readBuffer		DB	1024	DUP(00h) ;1024 bytes, fill with 0's
+	    00
+	   ]
+ 00000404 00000400		numCharsToRead	DD	1024	
+ 00000408 00000000		numCharsRead	DD	?
+
+
+ 0000040C 00000000		outputHandle	DD	?
+ 00000410 00000000		numWritten		DD	?
+ 00000414  00000400 [		writeBuffer		DB	1024	DUP(00h)
+	    00
+	   ]
+
+ 00000814 00000000		answer			DD	?
+
+ 00000000			.code
+
+ 00000000			main PROC near
+ 00000000			_main:
+					
+ 00000000  E8 00000007			call AToi
+
+					
+
+ 00000005  6A 00			push	0
+ 00000007  E8 00000000 E		call	_ExitProcess@4
+
+
+ 0000000C			main ENDP
+
+ 0000000C			AToi	PROC  near
+
+ 0000000C  55				push	ebp
+ 0000000D  8B EC			mov		ebp, esp
+ 0000000F  B9 0000000A			mov		ecx, 10
+
+				;handle	= GetStdHandle(-10)
+ 00000014  6A F6			push	-10
+ 00000016  E8 00000000 E		call	_GetStdHandle@4
+ 0000001B  A3 00000000 R		mov		inputHandle, eax
+
+					;handle = GetStdHandle(-11)
+ 00000020  6A F5			push	-11
+ 00000022  E8 00000000 E		call	_GetStdHandle@4
+ 00000027  A3 0000040C R		mov		outputHandle, eax
+
+					;ReadConsole(handle, @buffer, numCharsToRead, &numCharsRead, null)
+ 0000002C  6A 00			push	0
+ 0000002E  68 00000408 R		push	offset numCharsRead
+ 00000033  FF 35 00000404 R		push	numCharsToRead
+ 00000039  68 00000004 R		push	offset readBuffer
+ 0000003E  FF 35 00000000 R		push	inputHandle
+ 00000044  E8 00000000 E		call	_ReadConsoleA@20
+
+ 00000049  BB 00000004 R		mov		ebx, offset readBuffer
+ 0000004E  C7 05 00000814 R		mov		answer, 0		 ;ensure answer is set to 0 for correct total
+	   00000000
+ 00000058				_atoi:
+ 00000058  66| 8B 13			mov		dx, [ebx]
+ 0000005B  66| 83 FA 00			cmp		dx, 0
+ 0000005F  74 13			jz		_exit
+
+ 00000061  8B C2			mov		eax, edx
+
+ 00000063  83 E8 30			sub		eax, 48
+ 00000066  0F AF C8			imul	ecx, eax		;it wasn't happy with just 10, so I put 10 in ecx so it would stop crying
+ 00000069  01 05 00000814 R		add		answer, eax
+ 0000006F  83 C3 01			add		ebx, 1
+
+
+ 00000072  75 E4			jnz		_atoi
+
+
+
+
+ 00000074				_exit:
+
+ 00000074  83 05 00000814 R		add		answer, 23
+	   17
+
+ 0000007B  8B E5			mov		esp, ebp	;snap back to EBP
+ 0000007D  5D				pop		ebp			;restore callers EBP
+
+
+
+ 0000007E			AToi	ENDP
+
+				END
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/13/25 19:48:57
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000818 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000007E Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+AToi . . . . . . . . . . . . . .	P Near	 0000000C _TEXT	Length= 00000072 Public
+  _atoi  . . . . . . . . . . . .	L Near	 00000058 _TEXT	
+  _exit  . . . . . . . . . . . .	L Near	 00000074 _TEXT	
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000000C Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+_GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
+_ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
+answer . . . . . . . . . . . . .	DWord	 00000814 _DATA	
+inputHandle  . . . . . . . . . .	DWord	 00000000 _DATA	
+numCharsRead . . . . . . . . . .	DWord	 00000408 _DATA	
+numCharsToRead . . . . . . . . .	DWord	 00000404 _DATA	
+numWritten . . . . . . . . . . .	DWord	 00000410 _DATA	
+outputHandle . . . . . . . . . .	DWord	 0000040C _DATA	
+readBuffer . . . . . . . . . . .	Byte	 00000004 _DATA	
+writeBuffer  . . . . . . . . . .	Byte	 00000414 _DATA	
+
+	   0 Warnings
+	   0 Errors
