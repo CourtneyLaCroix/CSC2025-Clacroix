@@ -57,26 +57,28 @@ AToi	PROC  near
 	push	inputHandle
 	call	_ReadConsoleA@20
 
+	;substract two from readBuffer result  - numCharsRead
+
 	mov		ebx, offset readBuffer
 	mov		answer, 0		 ;ensure answer is set to 0 for correct total
 	mov		edi, 0
+	mov		esi, numCharsRead
+	sub		esi, 2
 	_atoi:
-	mov		dx, [ebx]
-	cmp		dx, 0
+	xor		edx, edx
+	mov		dl, [ebx]
+	cmp		esi, 0
 	jz		_exit
 
 	mov		eax, edx
-
-	sub		eax, 48				;covert from ASCII to Decimal
-	imul	ecx, edi			;it wasn't happy with just 10, so I put 10 in ecx so it would stop crying    mul total by 10
+	; k * 10 + (*string) - '0'
+	sub		eax, '0'    		;covert from ASCII to Decimal
+	imul	edi, 10				;it wasn't happy with just 10, so I put 10 in ecx so it would stop crying    mul total by 10
 	add		edi, eax			;add current digit to total
 	add		ebx, 1				;goto next byte in string
 
-
-	jnz		_atoi
-
-
-
+	dec		esi
+	jmp		_atoi
 
 	_exit:
 	mov		answer, edi
