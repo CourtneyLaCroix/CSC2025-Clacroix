@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C9D45EC6-77F5-4146-A966-56E8F4447269}|FibonacciJump\\FibonacciJump.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\FibonacciJump\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C9D45EC6-77F5-4146-A966-56E8F4447269}|FibonacciJump\\FibonacciJump.vcxproj|solutionrelative:FibonacciJump\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2F170BA5-5747-462C-BC6D-F6CEAADE52CF}|Atol\\Atol.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\Atol\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{2F170BA5-5747-462C-BC6D-F6CEAADE52CF}|Atol\\Atol.vcxproj|solutionrelative:Atol\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibonacciJump\\main.asm",
+              "RelativeDocumentMoniker": "FibonacciJump\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\FibonacciJump\\main.asm",
+              "RelativeToolTip": "FibonacciJump\\main.asm",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-16T16:50:31.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
               "RelativeDocumentMoniker": "PrintLine\\main.asm",
@@ -30,18 +47,17 @@
               "RelativeToolTip": "PrintLine\\main.asm",
               "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-14T01:03:25.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T01:03:25.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Atol\\main.asm",
               "RelativeDocumentMoniker": "Atol\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Atol\\main.asm*",
-              "RelativeToolTip": "Atol\\main.asm*",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAEMAAAAOAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Atol\\main.asm",
+              "RelativeToolTip": "Atol\\main.asm",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAtwEUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-04-13T23:38:12.415Z",
               "EditorCaption": ""
