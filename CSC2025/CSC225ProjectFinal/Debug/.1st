@@ -1,0 +1,191 @@
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/20/25 21:24:45
+main.asm						     Page 1 - 1
+
+
+				.386P
+				.model flat
+
+				extern _ExitProcess@4: near
+				extern _GetStdHandle@4: near
+				extern _WriteConsoleA@20: near
+				extern _ReadConsoleA@20: near
+
+
+ 00000000			.data
+ 00000000 00000000		inputHandle		DD	?	
+ 00000004  00000400 [		readBuffer		DB	1024	DUP(00h) ;1024 bytes, fill with 0's
+	    00
+	   ]
+ 00000404 00000400		numCharsToRead	DD	1024	
+ 00000408 00000000		numCharsRead	DD	?
+
+ 0000040C 00000000		outputHandle	DD	?
+ 00000410 00000000		written			DD	?
+ 00000414 00000000		out_handle		DD	?
+ 00000418  00000400 [		writeBuffer		DB	1024	DUP(00h)
+	    00
+	   ]
+
+ 00000818 45 6E 74 65 72	promptOne		DB		'Enter number 1: ',0ah
+	   20 6E 75 6D 62
+	   65 72 20 31 3A
+	   20 0A
+ 00000829 45 6E 74 65 72	promptTwo		DB		'Enter number 2: ',0ah
+	   20 6E 75 6D 62
+	   65 72 20 32 3A
+	   20 0A
+ 0000083A 54 68 65 20 6D	resultPrompt	DB		'The multiplicaton result is: ', 0ah
+	   75 6C 74 69 70
+	   6C 69 63 61 74
+	   6F 6E 20 72 65
+	   73 75 6C 74 20
+	   69 73 3A 20 0A
+
+ 00000858 00000000		valueOne		DD	?
+ 0000085C 00000000		valueTwo		DD	?
+
+
+ 00000000			.code
+
+
+
+ 00000000			main PROC near
+ 00000000			_main:
+
+ 00000000  6A F6			push	-10
+ 00000002  E8 00000000 E		call	_GetStdHandle@4
+ 00000007  A3 00000000 R		mov		inputHandle, eax
+
+
+					; Get stdout file handle
+					; handle = GetstdHandle(-11)
+ 0000000C  6A F5			push	-11
+ 0000000E  E8 00000000 E		call	_GetStdHandle@4
+ 00000013  A3 00000414 R		mov		out_handle, eax
+
+
+					; prints the prompt for the first user input to the screen
+					; WriteConsole(out_handle, &msg, 16, &written, 0)
+ 00000018  6A 00			push	0
+ 0000001A  68 00000410 R		push	offset written
+ 0000001F  6A 10			push	16
+ 00000021  68 00000818 R		push	offset promptOne
+ 00000026  FF 35 00000414 R		push	out_handle
+ 0000002C  E8 00000000 E		call	_WriteConsoleA@20
+
+ 00000031  51				push	ecx				;return value one in ecx
+ 00000032  E8 0000004B			call	prompt_User
+ 00000037  89 0D 00000858 R		mov		valueOne, ecx	;move the value recieved from user 
+
+
+					; prints the prompt for the second user input to the screen
+ 0000003D  6A 00			push	0
+ 0000003F  68 00000410 R		push	offset written
+ 00000044  6A 10			push	16
+ 00000046  68 00000829 R		push	offset promptTwo
+ 0000004B  FF 35 00000414 R		push	out_handle
+ 00000051  E8 00000000 E		call	_WriteConsoleA@20
+
+ 00000056  51				push	ecx				;return value two in ecx
+ 00000057  E8 00000026			call	prompt_User
+ 0000005C  89 0D 0000085C R		mov		valueTwo, ecx	;move the value recieved from user
+
+					;prints the result prompt showing multiplication to the screen
+ 00000062  6A 00			push	0
+ 00000064  68 00000410 R		push	offset written
+ 00000069  6A 1D			push	29
+ 0000006B  68 0000083A R		push	offset resultPrompt
+ 00000070  FF 35 00000414 R		push	out_handle
+ 00000076  E8 00000000 E		call	_WriteConsoleA@20
+
+
+
+
+
+ 0000007B  6A 00			push	0
+ 0000007D  E8 00000000 E		call	_ExitProcess@4
+
+ 00000082			main ENDP
+
+
+ 00000082			prompt_User		PROC	near
+ 00000082  55				push	ebp
+ 00000083  8B EC			mov		ebp, esp
+
+					;ReadConsole(handle, @buffer, numCharsToRead, &numCharsRead, null)
+ 00000085  6A 00			push	0
+ 00000087  68 00000408 R		push	offset numCharsRead
+ 0000008C  FF 35 00000404 R		push	numCharsToRead
+ 00000092  68 00000004 R		push	offset readBuffer
+ 00000097  FF 35 00000000 R		push	inputHandle
+ 0000009D  E8 00000000 E		call	_ReadConsoleA@20
+
+ 000000A2  B9 00000004 R		mov		ecx, offset readBuffer
+
+ 000000A7  59				pop		ecx
+ 000000A8  8B E5			mov		esp, ebp	;snap back to EBP
+ 000000AA  5D				pop		ebp			;restore callers EBP
+ 000000AB  C2 0004			ret		4
+
+ 000000AE			prompt_User	ENDP
+
+				END
+
+
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/20/25 21:24:45
+main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000860 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 000000AE Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000082 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+prompt_User  . . . . . . . . . .	P Near	 00000082 _TEXT	Length= 0000002C Public
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
+_GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
+_ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
+_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
+inputHandle  . . . . . . . . . .	DWord	 00000000 _DATA	
+numCharsRead . . . . . . . . . .	DWord	 00000408 _DATA	
+numCharsToRead . . . . . . . . .	DWord	 00000404 _DATA	
+out_handle . . . . . . . . . . .	DWord	 00000414 _DATA	
+outputHandle . . . . . . . . . .	DWord	 0000040C _DATA	
+promptOne  . . . . . . . . . . .	Byte	 00000818 _DATA	
+promptTwo  . . . . . . . . . . .	Byte	 00000829 _DATA	
+readBuffer . . . . . . . . . . .	Byte	 00000004 _DATA	
+resultPrompt . . . . . . . . . .	Byte	 0000083A _DATA	
+valueOne . . . . . . . . . . . .	DWord	 00000858 _DATA	
+valueTwo . . . . . . . . . . . .	DWord	 0000085C _DATA	
+writeBuffer  . . . . . . . . . .	Byte	 00000418 _DATA	
+written  . . . . . . . . . . . .	DWord	 00000410 _DATA	
+
+	   0 Warnings
+	   0 Errors
