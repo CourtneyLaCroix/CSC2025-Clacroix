@@ -24,10 +24,8 @@ main PROC near
 _main:
 	
 	call AToi
-
-	
-
 	push	0
+
 	call	_ExitProcess@4
 
 

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\CSC225ProjectFinal\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{991B4C8F-74AD-4EC0-9929-4B988B1EFC88}|PrintLine\\PrintLine.vcxproj|solutionrelative:PrintLine\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F170BA5-5747-462C-BC6D-F6CEAADE52CF}|Atol\\Atol.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\Atol\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{2F170BA5-5747-462C-BC6D-F6CEAADE52CF}|Atol\\Atol.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Atol\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{2F170BA5-5747-462C-BC6D-F6CEAADE52CF}|Atol\\Atol.vcxproj|solutionrelative:Atol\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C225A5AC-D15A-4B72-8366-2EA6881BD53A}|ConsoleIO\\ConsoleIO.vcxproj|solutionrelative:ConsoleIO\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeDocumentMoniker": "PrintLine\\main.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\PrintLine\\main.asm",
+              "RelativeToolTip": "PrintLine\\main.asm",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-23T02:17:48.453Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -32,7 +45,7 @@
               "RelativeDocumentMoniker": "Atol\\main.asm",
               "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\Atol\\main.asm",
               "RelativeToolTip": "Atol\\main.asm",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAFEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-04-21T03:00:03.065Z",
               "EditorCaption": ""
@@ -41,24 +54,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "main.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm",
-              "RelativeDocumentMoniker": "ConsoleIO\\main.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\ConsoleIO\\main.asm",
-              "RelativeToolTip": "ConsoleIO\\main.asm",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-21T03:09:42.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\main.asm",
               "RelativeDocumentMoniker": "CSC225ProjectFinal\\main.asm",
               "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\main.asm",
               "RelativeToolTip": "CSC225ProjectFinal\\main.asm",
-              "ViewState": "AgIAADYAAAAAAAAAAAAtwDoAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAALwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-04-21T02:47:07.912Z",
               "EditorCaption": ""

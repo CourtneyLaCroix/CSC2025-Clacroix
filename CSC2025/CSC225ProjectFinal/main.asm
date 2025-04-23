@@ -24,7 +24,8 @@ resultPrompt	DB		'The multiplicaton result is: ', 0ah
 
 valueOne		DD	?
 valueTwo		DD	?
-
+answer			DD	?
+strMulresult	DD	?
 
 .code
 
@@ -54,9 +55,10 @@ _main:
 	push	out_handle
 	call	_WriteConsoleA@20
 
-	push	ecx				;return value one in ecx
+
+
 	call	prompt_User
-	mov		valueOne, ecx	;move the value recieved from user 
+	mov		valueOne, edi	;move the value recieved from user 
 
 
 	; prints the prompt for the second user input to the screen
@@ -67,9 +69,21 @@ _main:
 	push	out_handle
 	call	_WriteConsoleA@20
 
-	push	ecx				;return value two in ecx
+	
 	call	prompt_User
-	mov		valueTwo, ecx	;move the value recieved from user
+	mov		valueTwo, edi	;move the value recieved from user
+
+
+	;multiply the values
+
+	mov		eax, [valueOne]
+	mov		ecx, [valueTwo]
+
+	MUL		ecx
+
+	;multiplied value is now in eax per how mul works (it is very strange)
+
+	call	Itoa
 
 	;prints the result prompt showing multiplication to the screen
 	push	0
@@ -101,15 +115,88 @@ prompt_User		PROC	near
 	push	inputHandle
 	call	_ReadConsoleA@20
 
-	mov		ecx, offset readBuffer
+	call	AToi
 
-	pop		ecx
+	
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP
 	ret		4
 
 prompt_User	ENDP
 
+
+AToi	PROC  near
+
+	push	ebp
+	mov		ebp, esp
+	mov		ecx, 10
+
+
+	;substract two from readBuffer result  - numCharsRead
+
+	mov		ebx, offset readBuffer
+	mov		answer, 0		 ;ensure answer is set to 0 for correct total
+	mov		edi, 0
+	mov		esi, numCharsRead
+	sub		esi, 2
+	_atoi:
+	xor		edx, edx
+	mov		dl, [ebx]
+	cmp		esi, 0
+	jz		_exit
+
+	mov		eax, edx
+	; k * 10 + (*string) - '0'
+	sub		eax, '0'    		;covert from ASCII to Decimal
+	imul	edi, 10				;it wasn't happy with just 10, so I put 10 in ecx so it would stop crying    mul total by 10
+	add		edi, eax			;add current digit to total
+	add		ebx, 1				;goto next byte in string
+
+	dec		esi
+	jmp		_atoi
+
+	_exit:
+	mov		answer, edi
+
+	mov		esp, ebp	;snap back to EBP
+	pop		ebp			;restore callers EBP
+
+	ret 
+
+AToi	ENDP
+	
+Itoa	PROC  near
+	push	ebp
+	mov		ebp, esp
+
+	mov		ecx, 10
+	xor		ebx, ebx		
+
+	divide:
+	xor		edx, edx
+	div		ecx			
+	push	dx
+	inc		bx
+	cmp		eax, 0
+	jnz		divide
+
+	mov		cx, bx
+
+
+next_Digit:
+	pop		ax
+	add		al, '0'		;converting to ASCII
+	m		[strMulresult], al	;write to buffer
+	inc		si
+	loop next_Digit
+
+
+
+
+	mov		esp, ebp	;snap back to EBP
+	pop		ebp			;restore callers EBP
+	ret
+Itoa	ENDP
 END
 
 

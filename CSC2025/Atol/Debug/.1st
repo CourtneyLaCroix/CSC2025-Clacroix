@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/14/25 10:48:23
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/22/25 20:35:38
 main.asm						     Page 1 - 1
 
 
@@ -32,10 +32,8 @@ main.asm						     Page 1 - 1
  00000000			_main:
 					
  00000000  E8 00000007			call AToi
-
-					
-
  00000005  6A 00			push	0
+
  00000007  E8 00000000 E		call	_ExitProcess@4
 
 
@@ -102,7 +100,7 @@ main.asm						     Page 1 - 1
  0000008F			AToi	ENDP
 
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/14/25 10:48:23
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/22/25 20:35:38
 main.asm						     Symbols 2 - 1
 
 
