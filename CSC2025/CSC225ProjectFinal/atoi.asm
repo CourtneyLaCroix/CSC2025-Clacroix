@@ -3,35 +3,22 @@
 
 extern _ExitProcess@4: near
 extern _GetStdHandle@4: near
+extern _WriteConsoleA@20: near
 extern _ReadConsoleA@20: near
 
 .data
-inputHandle		DD	?	
+inputHandle		DD	?
+outputHandle	DD	?
 readBuffer		DB	1024	DUP(00h) ;1024 bytes, fill with 0's
 numCharsToRead	DD	1024	
 numCharsRead	DD	?
-
-
-outputHandle	DD	?
-numWritten		DD	?
-writeBuffer		DB	1024	DUP(00h)
-
 answer			DD	?
 
 .code
 
-main PROC near
-_main:
-	
-	call AToi
-	push	0
-
-	call	_ExitProcess@4
 
 
-main ENDP
-
-AToi	PROC  near
+atoi	PROC  near
 
 	push	ebp
 	mov		ebp, esp
@@ -80,13 +67,12 @@ AToi	PROC  near
 
 	_exit:
 	mov		answer, edi
-	add		answer, 23
 
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP
 
+	ret 4
 
 
-AToi	ENDP
-
+atoi	ENDP
 END

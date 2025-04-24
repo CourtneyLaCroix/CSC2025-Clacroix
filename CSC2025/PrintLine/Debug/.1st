@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/08/25 13:53:50
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/24/25 11:35:45
 main.asm						     Page 1 - 1
 
 
@@ -48,7 +48,7 @@ main.asm						     Page 1 - 1
 
  0000001B  BF 00000000			mov		edi, 0  ;edi is the incrimenter register
 
- 00000020				_char_counter:	;is this called a flag??? its something you can to you
+ 00000020				_char_counter:	;this is called a label 
  00000020  8A 08			mov		cl, [eax]
  00000022  80 F9 00			cmp		cl, 0
  00000025  74 06			jz		_exit
@@ -71,22 +71,22 @@ main.asm						     Page 1 - 1
 
  0000003F  6A 00			push	0
  00000041  68 00000017 R		push	offset written
- 00000046  FF 35 0000000F R		push	count_char
- 0000004C  68 00000000 R		push	offset msg
- 00000051  FF 35 00000013 R		push	out_handle
- 00000057  E8 00000000 E		call	_WriteConsoleA@20			;returns the stack before all of the above pushes
+ 00000046  57				push	edi
+ 00000047  68 00000000 R		push	offset msg
+ 0000004C  FF 35 00000013 R		push	out_handle
+ 00000052  E8 00000000 E		call	_WriteConsoleA@20			;returns the stack before all of the above pushes
 
 					;Epilogue
- 0000005C  5E				pop		esi
- 0000005D  5F				pop		edi
- 0000005E  8B E5			mov		esp, ebp	;snap back to EBP
- 00000060  5D				pop		ebp			;restore callers EBP
- 00000061  C2 0004			ret		4
+ 00000057  5E				pop		esi
+ 00000058  5F				pop		edi
+ 00000059  8B E5			mov		esp, ebp	;snap back to EBP
+ 0000005B  5D				pop		ebp			;restore callers EBP
+ 0000005C  C2 0004			ret		4
 
- 00000064			print_line	ENDP
+ 0000005F			print_line	ENDP
 
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/08/25 13:53:50
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/24/25 11:35:45
 main.asm						     Symbols 2 - 1
 
 
@@ -98,7 +98,7 @@ Segments and Groups:
 
 FLAT . . . . . . . . . . . . . .	GROUP
 _DATA  . . . . . . . . . . . . .	32 Bit	 0000001B Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000064 Para	  Public  'CODE'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000005F Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
@@ -107,7 +107,7 @@ Procedures, parameters, and locals:
 
 main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000016 Public
   _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
-print_line . . . . . . . . . . .	P Near	 00000016 _TEXT	Length= 0000004E Public
+print_line . . . . . . . . . . .	P Near	 00000016 _TEXT	Length= 00000049 Public
   _char_counter  . . . . . . . .	L Near	 00000020 _TEXT	
   _exit  . . . . . . . . . . . .	L Near	 0000002D _TEXT	
 

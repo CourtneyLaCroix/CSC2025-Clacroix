@@ -18,5 +18,14 @@
     <MASM Include="main.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="writeLine.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="atoi.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="itoa.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
