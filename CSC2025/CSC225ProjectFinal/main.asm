@@ -25,8 +25,8 @@ resultPrompt	DB		'The multiplicaton result is: ', 0ah
 valueOne		DD	?
 valueTwo		DD	?
 answer			DD	?
-strMulresult	DD	?
-
+strMulResult	DD	1042	DUP(00h), 0ah ;  push t
+mulResult		DD	?
 .code
 
 
@@ -80,10 +80,11 @@ _main:
 	mov		ecx, [valueTwo]
 
 	MUL		ecx
+	mov		mulResult, eax	
 
 	;multiplied value is now in eax per how mul works (it is very strange)
 
-	call	Itoa
+;	call	Itoa
 
 	;prints the result prompt showing multiplication to the screen
 	push	0
@@ -169,29 +170,23 @@ Itoa	PROC  near
 	push	ebp
 	mov		ebp, esp
 
-	mov		ecx, 10
-	xor		ebx, ebx		
+	mov		edi, 10
 
-	divide:
-	xor		edx, edx
-	div		ecx			
-	push	dx
-	inc		bx
+_next_digit:
 	cmp		eax, 0
-	jnz		divide
+	jz		_no_more_digits
 
-	mov		cx, bx
+	
 
-
-next_Digit:
-	pop		ax
-	add		al, '0'		;converting to ASCII
-	m		[strMulresult], al	;write to buffer
-	inc		si
-	loop next_Digit
+	div		edi
 
 
+	push	edx
 
+
+	loop
+
+	_no_more_digits:
 
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP

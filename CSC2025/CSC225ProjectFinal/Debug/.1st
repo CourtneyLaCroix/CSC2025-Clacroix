@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/22/25 22:00:32
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/23/25 12:02:13
 main.asm						     Page 1 - 1
 
 
@@ -44,8 +44,10 @@ main.asm						     Page 1 - 1
  00000858 00000000		valueOne		DD	?
  0000085C 00000000		valueTwo		DD	?
  00000860 00000000		answer			DD	?
- 00000864 00000000		strMulresult	DD	?
-
+ 00000864  00000412 [		strMulResult	DD	1042	DUP(00h), 0ah ;  push t
+	    00000000
+	   ] 0000000A
+ 000018B0 00000000		mulResult		DD	?
  00000000			.code
 
 
@@ -99,10 +101,11 @@ main.asm						     Page 1 - 1
  00000065  8B 0D 0000085C R		mov		ecx, [valueTwo]
 
  0000006B  F7 E1			MUL		ecx
+ 0000006D  A3 000018B0 R		mov		mulResult, eax	
 
 					;multiplied value is now in eax per how mul works (it is very strange)
 
- 0000006D  E8 00000093			call	Itoa
+				;	call	Itoa
 
 					;prints the result prompt showing multiplication to the screen
  00000072  6A 00			push	0
@@ -189,39 +192,33 @@ main.asm						     Page 1 - 1
  00000105  55				push	ebp
  00000106  8B EC			mov		ebp, esp
 
- 00000108  B9 0000000A			mov		ecx, 10
- 0000010D  33 DB			xor		ebx, ebx		
+ 00000108  BF 0000000A			mov		edi, 10
 
- 0000010F				divide:
- 0000010F  33 D2			xor		edx, edx
- 00000111  F7 F1			div		ecx			
- 00000113  66| 52			push	dx
- 00000115  66| 43			inc		bx
- 00000117  83 F8 00			cmp		eax, 0
- 0000011A  75 F3			jnz		divide
+ 0000010D			_next_digit:
+ 0000010D  83 F8 00			cmp		eax, 0
+ 00000110  74 03			jz		_no_more_digits
 
- 0000011C  66| 8B CB			mov		cx, bx
+					
+
+ 00000112  F7 F7			div		edi
 
 
- 0000011F			next_Digit:
- 0000011F  66| 58			pop		ax
- 00000121  04 30			add		al, '0'		;converting to ASCII
-					add		[strMulresult], al	;write to buffer
-main.asm(189) : error A2022:instruction operands must be the same size
- 00000123  66| 46			inc		si
- 00000125  E2 F8			loop next_Digit
+ 00000114  52				push	edx
 
 
+					loop
+main.asm(187) : error A2008:syntax error : in instruction
 
+ 00000115				_no_more_digits:
 
- 00000127  8B E5			mov		esp, ebp	;snap back to EBP
- 00000129  5D				pop		ebp			;restore callers EBP
- 0000012A  C3				ret
- 0000012B			Itoa	ENDP
+ 00000115  8B E5			mov		esp, ebp	;snap back to EBP
+ 00000117  5D				pop		ebp			;restore callers EBP
+ 00000118  C3				ret
+ 00000119			Itoa	ENDP
 				END
 
 
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/22/25 22:00:32
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/23/25 12:02:13
 main.asm						     Symbols 2 - 1
 
 
@@ -232,8 +229,8 @@ Segments and Groups:
                 N a m e                 Size     Length   Align   Combine Class
 
 FLAT . . . . . . . . . . . . . .	GROUP
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000868 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 0000013A Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 000018B4 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000119 Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
@@ -243,9 +240,9 @@ Procedures, parameters, and locals:
 AToi . . . . . . . . . . . . . .	P Near	 000000BD _TEXT	Length= 00000048 Public
   _atoi  . . . . . . . . . . . .	L Near	 000000E2 _TEXT	
   _exit  . . . . . . . . . . . .	L Near	 000000FB _TEXT	
-Itoa . . . . . . . . . . . . . .	P Near	 00000105 _TEXT	Length= 00000035 Public
-  divide . . . . . . . . . . . .	L Near	 0000010F _TEXT	
-  next_Digit . . . . . . . . . .	L Near	 0000011F _TEXT	
+Itoa . . . . . . . . . . . . . .	P Near	 00000105 _TEXT	Length= 00000014 Public
+  _next_digit  . . . . . . . . .	L Near	 0000010D _TEXT	
+  _no_more_digits  . . . . . . .	L Near	 00000115 _TEXT	
 main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000092 Public
   _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
 prompt_User  . . . . . . . . . .	P Near	 00000092 _TEXT	Length= 0000002B Public
@@ -270,6 +267,7 @@ _ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
 _WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
 answer . . . . . . . . . . . . .	DWord	 00000860 _DATA	
 inputHandle  . . . . . . . . . .	DWord	 00000000 _DATA	
+mulResult  . . . . . . . . . . .	DWord	 000018B0 _DATA	
 numCharsRead . . . . . . . . . .	DWord	 00000408 _DATA	
 numCharsToRead . . . . . . . . .	DWord	 00000404 _DATA	
 out_handle . . . . . . . . . . .	DWord	 00000414 _DATA	
@@ -278,7 +276,7 @@ promptOne  . . . . . . . . . . .	Byte	 00000818 _DATA
 promptTwo  . . . . . . . . . . .	Byte	 00000829 _DATA	
 readBuffer . . . . . . . . . . .	Byte	 00000004 _DATA	
 resultPrompt . . . . . . . . . .	Byte	 0000083A _DATA	
-strMulresult . . . . . . . . . .	DWord	 00000864 _DATA	
+strMulResult . . . . . . . . . .	DWord	 00000864 _DATA	
 valueOne . . . . . . . . . . . .	DWord	 00000858 _DATA	
 valueTwo . . . . . . . . . . . .	DWord	 0000085C _DATA	
 writeBuffer  . . . . . . . . . .	Byte	 00000418 _DATA	
