@@ -1,5 +1,5 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/24/25 21:33:26
-writeLine.asm						     Page 1 - 1
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/25/25 10:45:00
+itoa.asm						     Page 1 - 1
 
 
 				.386P
@@ -8,72 +8,63 @@ writeLine.asm						     Page 1 - 1
 				extern _ExitProcess@4: near
 				extern _GetStdHandle@4: near
 				extern _ReadConsoleA@20: near
-				extern _WriteConsoleA@20: near
-
+				extern writeLine: near
 
  00000000			.data
- 00000000 00000000			printMe		DD		?
- 00000004 00000000			count_char	DD		?
- 00000008 00000000			out_handle	DD		?
- 0000000C 00000000			written		DD		?
+
+ 00000000 FF 00			return_string	DB	255, 0
+
 
  00000000			.code
 
- 00000000			writeLine	PROC	near
+ 00000000			itoa PROC near
 
- 00000000  50				push	eax
- 00000001  55				push	ebp
- 00000002  8B EC			mov		ebp, esp
- 00000004  56				push	esi		;callee process
+ 00000000			_itoa:
+ 00000000  52				push	edx
+ 00000001  53				push	ebx
+ 00000002  57				push	edi
+ 00000003  55				push	ebp
+ 00000004  8B EC			mov		ebp, esp
 
-					;Subroutine
-
- 00000005  52				push	edx
- 00000006  BF 00000000			mov		edi, 0  ;edi is the incrimenter register
-
- 0000000B				_char_counter:	;this is called a label 
- 0000000B  8A 0A			mov		cl, [edx]
- 0000000D  80 F9 00			cmp		cl, 0
- 00000010  74 06			jz		_exit
-
- 00000012  47				inc		edi
- 00000013  83 C2 01			add		edx, 1
-
- 00000016  75 F3			jnz		_char_counter
 					
- 00000018				_exit:
+ 00000006  BB 000000FF			mov		ebx, 255		
 
- 00000018  5A				pop		edx
+ 0000000B			_next_digit:
+					
+ 0000000B  33 D2			xor		edx, edx
+ 0000000D  BF 0000000A			mov		edi, 10		;divide by 10
+ 00000012  F7 F7			div		edi
+					
 
- 00000019  89 3D 00000004 R		mov		[count_char], edi
+ 00000014  4B				dec		ebx
+ 00000015  83 C2 30			add		edx, '0'	;convert to ascii
+ 00000018  88 93 00000000 R		mov     [return_string + ebx], dl
 
-					; Get stdout file handle
-					; handle = GetstdHandle(-11)
+ 0000001E  83 F8 00			cmp		eax, 0			;check for remainder of 0     (has the remainder)
+ 00000021  74 02			jz		_no_more_digits
 
- 0000001F  6A F5			push	-11
- 00000021  E8 00000000 E		call	_GetStdHandle@4		; this function will return the stack before the push of -11
- 00000026  A3 00000008 R		mov		out_handle, eax
+ 00000023  EB E6			jmp		_next_digit
 
+ 00000025			_no_more_digits:
+ 00000025  81 C3 00000000 R		add		ebx, offset return_string
 
- 0000002B  6A 00			push	0
- 0000002D  68 0000000C R		push	offset written
- 00000032  57				push	edi
- 00000033  52				push	edx
- 00000034  FF 35 00000008 R		push	out_handle
- 0000003A  E8 00000000 E		call	_WriteConsoleA@20			;returns the stack before all of the above pushes
+					
+ 0000002B  8B D3			mov		edx, ebx
+ 0000002D  52				push	edx
+ 0000002E  E8 00000000 E		call	writeLine
 
-					;Epilogue
- 0000003F  5E				pop		esi
- 00000040  8B E5			mov		esp, ebp	;snap back to EBP
- 00000042  5D				pop		ebp			;restore callers EBP
- 00000043  58				pop		eax
- 00000044  C2 0004			ret		4
+ 00000033  8B E5			mov		esp, ebp	;snap back to EBP
+ 00000035  5D				pop		ebp			;restore callers EBP
+ 00000036  5F				pop		edi
+ 00000037  5B				pop		ebx
+ 00000038  5A				pop		edx
+ 00000039  C3				ret
 
- 00000047			writeLine ENDP
+ 0000003A			itoa ENDP
 
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/24/25 21:33:26
-writeLine.asm						     Symbols 2 - 1
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/25/25 10:45:00
+itoa.asm						     Symbols 2 - 1
 
 
 
@@ -83,17 +74,18 @@ Segments and Groups:
                 N a m e                 Size     Length   Align   Combine Class
 
 FLAT . . . . . . . . . . . . . .	GROUP
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000010 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000047 Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000002 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000003A Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-writeLine  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000047 Public
-  _char_counter  . . . . . . . .	L Near	 0000000B _TEXT	
-  _exit  . . . . . . . . . . . .	L Near	 00000018 _TEXT	
+itoa . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000003A Public
+  _itoa  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
+  _next_digit  . . . . . . . . .	L Near	 0000000B _TEXT	
+  _no_more_digits  . . . . . . .	L Near	 00000025 _TEXT	
 
 
 Symbols:
@@ -112,11 +104,8 @@ Symbols:
 _ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
 _GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
 _ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
-_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
-count_char . . . . . . . . . . .	DWord	 00000004 _DATA	
-out_handle . . . . . . . . . . .	DWord	 00000008 _DATA	
-printMe  . . . . . . . . . . . .	DWord	 00000000 _DATA	
-written  . . . . . . . . . . . .	DWord	 0000000C _DATA	
+return_string  . . . . . . . . .	Byte	 00000000 _DATA	
+writeLine  . . . . . . . . . . .	L Near	 00000000 FLAT	External
 
 	   0 Warnings
 	   0 Errors

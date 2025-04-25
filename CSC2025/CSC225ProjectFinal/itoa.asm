@@ -8,7 +8,7 @@ extern writeLine: near
 
 .data
 
-return_string	DD	?
+return_string	DB	255, 0
 
 
 .code
@@ -23,28 +23,29 @@ _itoa:
 	mov		ebp, esp
 
 	
-	mov		ebx, 0		;loop till 0
+	mov		ebx, 255		
 
 _next_digit:
 	
 	xor		edx, edx
 	mov		edi, 10		;divide by 10
 	div		edi
-	cmp		edx, 0			;check for remainder of 0     (has the remainder)
-	jz		_no_more_digits
+	
 
+	dec		ebx
 	add		edx, '0'	;convert to ascii
-	mov     [return_string + ebx], edx
-	add		ebx,  1
+	mov     [return_string + ebx], dl
+
+	cmp		eax, 0			;check for remainder of 0     (has the remainder)
+	jz		_no_more_digits
 
 	jmp		_next_digit
 
 _no_more_digits:
-	add		ebx, 1
-	mov		[return_string + ebx], 0
+	add		ebx, offset return_string
 
 	
-	mov		edx, offset return_string
+	mov		edx, ebx
 	push	edx
 	call	writeLine
 
