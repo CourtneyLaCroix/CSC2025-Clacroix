@@ -7,7 +7,7 @@ extern _WriteConsoleA@20: near
 extern _ReadConsoleA@20: near
 extern atoi: near
 extern itoa: near
-extern readLine: near
+extern writeLine: near
 
 
 .data
@@ -40,14 +40,14 @@ _main:
 
 
 	mov		edx, offset promptOne
-	call	readLine
+	call	writeLine
 
 	call	atoi
 	mov		valueOne, edi	;move the value recieved from user 
 
 
 	mov		edx, offset promptTwo	
-	call	readLine
+	call	writeLine
 
 	call	atoi
 	mov		valueTwo, edi	;move the value recieved from user
@@ -64,15 +64,14 @@ _main:
 	;multiplied value is now in eax per how mul works (it is very strange)
 
 
-
-	push	eax
-	call	itoa
+	
 
 	;prints the result prompt showing multiplication to the screen
 	mov		edx, offset resultPrompt
-	call	readLine
+	call	writeLine
 
-
+	push	eax
+	call	itoa
 
 
 

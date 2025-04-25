@@ -15,7 +15,9 @@ extern _WriteConsoleA@20: near
 
 .code
 
-readLine	PROC	near
+writeLine	PROC	near
+
+	push	eax
 	push	ebp
 	mov		ebp, esp
 	push	esi		;callee process
@@ -60,8 +62,9 @@ readLine	PROC	near
 	pop		esi
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP
+	pop		eax
 	ret		4
 
-readLine ENDP
+writeLine ENDP
 
 END
