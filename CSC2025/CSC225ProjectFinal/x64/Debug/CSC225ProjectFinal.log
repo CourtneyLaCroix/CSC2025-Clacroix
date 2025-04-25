@@ -1,0 +1,12 @@
+﻿  Assembling atoi.asm...
+atoi.asm(1): error A2008: syntax error : .
+atoi.asm(2): error A2008: syntax error : .
+atoi.asm(21): error A2008: syntax error : near
+atoi.asm(23): error A2070: invalid instruction operands
+atoi.asm(39): error A2070: invalid instruction operands
+atoi.asm(40): error A2070: invalid instruction operands
+atoi.asm(41): error A2070: invalid instruction operands
+atoi.asm(42): error A2070: invalid instruction operands
+atoi.asm(72): error A2070: invalid instruction operands
+atoi.asm(77): fatal error A1010: unmatched block nesting : atoi
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml64.exe /c /nologo /Zi /Fo"x64\Debug\atoi.obj" /W3 /errorReport:prompt  /Taatoi.asm" exited with code 1.

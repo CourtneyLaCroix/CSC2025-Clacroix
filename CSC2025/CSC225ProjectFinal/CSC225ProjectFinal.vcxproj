@@ -22,6 +22,7 @@
     <MASM Include="atoi.asm" />
     <MASM Include="itoa.asm" />
     <MASM Include="main.asm" />
+    <MASM Include="readLine.asm" />
     <MASM Include="writeLine.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

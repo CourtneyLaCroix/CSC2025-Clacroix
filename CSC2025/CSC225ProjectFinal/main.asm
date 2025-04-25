@@ -39,14 +39,18 @@ main PROC near
 _main:
 
 
-	mov		edx, offset promptOne
+	;mov		edx, offset promptOne
+
+	push	offset promptOne
 	call	writeLine
 
 	call	atoi
 	mov		valueOne, edi	;move the value recieved from user 
 
 
-	mov		edx, offset promptTwo	
+	;mov		edx, offset promptTwo
+
+	push	offset promptTwo
 	call	writeLine
 
 	call	atoi
@@ -67,10 +71,12 @@ _main:
 	
 
 	;prints the result prompt showing multiplication to the screen
-	mov		edx, offset resultPrompt
+	;mov		edx, offset resultPrompt
+
+	push	offset resultPrompt
 	call	writeLine
 
-	push	eax
+	push	[mulResult]
 	call	itoa
 
 

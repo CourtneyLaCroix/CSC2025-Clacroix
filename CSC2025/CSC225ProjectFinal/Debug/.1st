@@ -1,5 +1,5 @@
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/25/25 10:45:00
-itoa.asm						     Page 1 - 1
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/25/25 14:52:15
+main.asm						     Page 1 - 1
 
 
 				.386P
@@ -7,64 +7,113 @@ itoa.asm						     Page 1 - 1
 
 				extern _ExitProcess@4: near
 				extern _GetStdHandle@4: near
+				extern _WriteConsoleA@20: near
 				extern _ReadConsoleA@20: near
+				extern atoi: near
+				extern itoa: near
 				extern writeLine: near
 
+
  00000000			.data
+ 00000000 00000000		inputHandle		DD	?	
+ 00000004  00000400 [		readBuffer		DB	1024	DUP(00h) ;1024 bytes, fill with 0's
+	    00
+	   ]
+ 00000404 00000400		numCharsToRead	DD	1024	
+ 00000408 00000000		numCharsRead	DD	?
 
- 00000000 FF 00			return_string	DB	255, 0
+ 0000040C 00000000		outputHandle	DD	?
+ 00000410 00000000		written			DD	?
+ 00000414 00000000		out_handle		DD	?
+ 00000418  00000400 [		writeBuffer		DB	1024	DUP(00h)
+	    00
+	   ]
 
+ 00000818 45 6E 74 65 72	promptOne		DB		'Enter number 1: ',0
+	   20 6E 75 6D 62
+	   65 72 20 31 3A
+	   20 00
+ 00000829 45 6E 74 65 72	promptTwo		DB		'Enter number 2: ',0
+	   20 6E 75 6D 62
+	   65 72 20 32 3A
+	   20 00
+ 0000083A 54 68 65 20 6D	resultPrompt	DB		'The multiplicaton result is: ', 0
+	   75 6C 74 69 70
+	   6C 69 63 61 74
+	   6F 6E 20 72 65
+	   73 75 6C 74 20
+	   69 73 3A 20 00
+
+ 00000858 00000000		valueOne		DD	?
+ 0000085C 00000000		valueTwo		DD	?
+ 00000860 00000000		answer			DD	?
+ 00000864  00000412 [		strMulResult	DD	1042	DUP(00h), 0ah ;  push t
+	    00000000
+	   ] 0000000A
+ 000018B0 00000000		mulResult		DD	?
 
  00000000			.code
 
- 00000000			itoa PROC near
 
- 00000000			_itoa:
- 00000000  52				push	edx
- 00000001  53				push	ebx
- 00000002  57				push	edi
- 00000003  55				push	ebp
- 00000004  8B EC			mov		ebp, esp
+
+ 00000000			main PROC near
+ 00000000			_main:
+
+
+					;mov		edx, offset promptOne
+
+ 00000000  68 00000818 R		push	offset promptOne
+ 00000005  E8 00000000 E		call	writeLine
+
+ 0000000A  E8 00000000 E		call	atoi
+ 0000000F  89 3D 00000858 R		mov		valueOne, edi	;move the value recieved from user 
+
+
+					;mov		edx, offset promptTwo
+
+ 00000015  68 00000829 R		push	offset promptTwo
+ 0000001A  E8 00000000 E		call	writeLine
+
+ 0000001F  E8 00000000 E		call	atoi
+ 00000024  89 3D 0000085C R		mov		valueTwo, edi	;move the value recieved from user
+
+
+					;multiply the values
+
+ 0000002A  A1 00000858 R		mov		eax, [valueOne]
+ 0000002F  8B 0D 0000085C R		mov		ecx, [valueTwo]
+
+ 00000035  F7 E1			MUL		ecx
+ 00000037  A3 000018B0 R		mov		mulResult, eax	
+
+					;multiplied value is now in eax per how mul works (it is very strange)
+
 
 					
- 00000006  BB 000000FF			mov		ebx, 255		
 
- 0000000B			_next_digit:
-					
- 0000000B  33 D2			xor		edx, edx
- 0000000D  BF 0000000A			mov		edi, 10		;divide by 10
- 00000012  F7 F7			div		edi
-					
+					;prints the result prompt showing multiplication to the screen
+					;mov		edx, offset resultPrompt
 
- 00000014  4B				dec		ebx
- 00000015  83 C2 30			add		edx, '0'	;convert to ascii
- 00000018  88 93 00000000 R		mov     [return_string + ebx], dl
+ 0000003C  68 0000083A R		push	offset resultPrompt
+ 00000041  E8 00000000 E		call	writeLine
 
- 0000001E  83 F8 00			cmp		eax, 0			;check for remainder of 0     (has the remainder)
- 00000021  74 02			jz		_no_more_digits
+ 00000046  FF 35 000018B0 R		push	[mulResult]
+ 0000004C  E8 00000000 E		call	itoa
 
- 00000023  EB E6			jmp		_next_digit
 
- 00000025			_no_more_digits:
- 00000025  81 C3 00000000 R		add		ebx, offset return_string
 
-					
- 0000002B  8B D3			mov		edx, ebx
- 0000002D  52				push	edx
- 0000002E  E8 00000000 E		call	writeLine
+ 00000051  6A 00			push	0
+ 00000053  E8 00000000 E		call	_ExitProcess@4
 
- 00000033  8B E5			mov		esp, ebp	;snap back to EBP
- 00000035  5D				pop		ebp			;restore callers EBP
- 00000036  5F				pop		edi
- 00000037  5B				pop		ebx
- 00000038  5A				pop		edx
- 00000039  C3				ret
+ 00000058			main ENDP
 
- 0000003A			itoa ENDP
+
 
 				END
-Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/25/25 10:45:00
-itoa.asm						     Symbols 2 - 1
+
+
+Microsoft (R) Macro Assembler Version 14.43.34809.0	    04/25/25 14:52:15
+main.asm						     Symbols 2 - 1
 
 
 
@@ -74,18 +123,16 @@ Segments and Groups:
                 N a m e                 Size     Length   Align   Combine Class
 
 FLAT . . . . . . . . . . . . . .	GROUP
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000002 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 0000003A Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 000018B4 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000058 Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-itoa . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000003A Public
-  _itoa  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
-  _next_digit  . . . . . . . . .	L Near	 0000000B _TEXT	
-  _no_more_digits  . . . . . . .	L Near	 00000025 _TEXT	
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000058 Public
+  _main  . . . . . . . . . . . .	L Near	 00000000 _TEXT	
 
 
 Symbols:
@@ -104,8 +151,26 @@ Symbols:
 _ExitProcess@4 . . . . . . . . .	L Near	 00000000 FLAT	External
 _GetStdHandle@4  . . . . . . . .	L Near	 00000000 FLAT	External
 _ReadConsoleA@20 . . . . . . . .	L Near	 00000000 FLAT	External
-return_string  . . . . . . . . .	Byte	 00000000 _DATA	
+_WriteConsoleA@20  . . . . . . .	L Near	 00000000 FLAT	External
+answer . . . . . . . . . . . . .	DWord	 00000860 _DATA	
+atoi . . . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+inputHandle  . . . . . . . . . .	DWord	 00000000 _DATA	
+itoa . . . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+mulResult  . . . . . . . . . . .	DWord	 000018B0 _DATA	
+numCharsRead . . . . . . . . . .	DWord	 00000408 _DATA	
+numCharsToRead . . . . . . . . .	DWord	 00000404 _DATA	
+out_handle . . . . . . . . . . .	DWord	 00000414 _DATA	
+outputHandle . . . . . . . . . .	DWord	 0000040C _DATA	
+promptOne  . . . . . . . . . . .	Byte	 00000818 _DATA	
+promptTwo  . . . . . . . . . . .	Byte	 00000829 _DATA	
+readBuffer . . . . . . . . . . .	Byte	 00000004 _DATA	
+resultPrompt . . . . . . . . . .	Byte	 0000083A _DATA	
+strMulResult . . . . . . . . . .	DWord	 00000864 _DATA	
+valueOne . . . . . . . . . . . .	DWord	 00000858 _DATA	
+valueTwo . . . . . . . . . . . .	DWord	 0000085C _DATA	
+writeBuffer  . . . . . . . . . .	Byte	 00000418 _DATA	
 writeLine  . . . . . . . . . . .	L Near	 00000000 FLAT	External
+written  . . . . . . . . . . . .	DWord	 00000410 _DATA	
 
 	   0 Warnings
 	   0 Errors

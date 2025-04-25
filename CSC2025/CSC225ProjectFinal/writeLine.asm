@@ -17,7 +17,6 @@ extern _WriteConsoleA@20: near
 
 writeLine	PROC	near
 
-	push	eax
 	push	ebp
 	mov		ebp, esp
 	push	esi		;callee process
@@ -25,6 +24,7 @@ writeLine	PROC	near
 	;Subroutine
 
 	push	edx
+	mov		edx, [ebp + 8]
 	mov		edi, 0  ;edi is the incrimenter register
 
 	_char_counter:	;this is called a label 
@@ -54,15 +54,15 @@ writeLine	PROC	near
 	push	0
 	push	offset written
 	push	edi
-	push	edx
+	push	[ebp + 8]
 	push	out_handle
 	call	_WriteConsoleA@20			;returns the stack before all of the above pushes
 
 	;Epilogue
+	pop		edx
 	pop		esi
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP
-	pop		eax
 	ret		4
 
 writeLine ENDP
