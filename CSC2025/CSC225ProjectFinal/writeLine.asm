@@ -19,15 +19,16 @@ writeLine	PROC	near
 
 	push	ebp
 	mov		ebp, esp
-	push	esi		;callee process
+	push	esi		
 
 	;Subroutine
 
 	push	edx
 	mov		edx, [ebp + 8]
-	mov		edi, 0  ;edi is the incrimenter register
+	mov		edi, 0 
 
-	_char_counter:	;this is called a label 
+
+	_char_counter:	
 	mov		cl, [edx]
 	cmp		cl, 0
 	jz		_exit
@@ -38,18 +39,13 @@ writeLine	PROC	near
 	jnz		_char_counter
 	
 	_exit:
-
 	pop		edx
-
 	mov		[count_char], edi
 
-	; Get stdout file handle
-	; handle = GetstdHandle(-11)
 
 	push	-11
 	call	_GetStdHandle@4		; this function will return the stack before the push of -11
 	mov		out_handle, eax
-
 
 	push	0
 	push	offset written
