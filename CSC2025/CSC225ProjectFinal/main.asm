@@ -39,16 +39,12 @@ main PROC near
 _main:
 
 
-	;mov		edx, offset promptOne
-
 	push	offset promptOne
 	call	writeLine
 
 	call	atoi
 	mov		valueOne, edi	;move the value recieved from user 
 
-
-	;mov		edx, offset promptTwo
 
 	push	offset promptTwo
 	call	writeLine
