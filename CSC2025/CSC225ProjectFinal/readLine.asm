@@ -34,17 +34,17 @@ readLine	PROC  near
 
 	;ReadConsole(handle, @buffer, numCharsToRead, &numCharsRead, null)
 	push	0
-	push	offset numCharsRead
+	push	[ebp + 8]
 	push	numCharsToRead
-	push	offset readBuffer
+	push	[ebp + 12]
 	push	inputHandle
-	call	_ReadConsoleA@20
+	call	_ReadConsoleA@20 
 
 
 	mov		esp, ebp	;snap back to EBP
 	pop		ebp			;restore callers EBP
 
-	ret 4
+	ret		8
 
 
 readLine	ENDP

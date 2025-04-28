@@ -5,6 +5,7 @@ extern _ExitProcess@4: near
 extern _GetStdHandle@4: near
 extern _WriteConsoleA@20: near
 extern _ReadConsoleA@20: near
+extern readLine: near
 
 .data
 inputHandle		DD	?
@@ -24,23 +25,10 @@ atoi	PROC  near
 	mov		ebp, esp
 	mov		ecx, 10
 
-	;handle	= GetStdHandle(-10)
-	push	-10
-	call	_GetStdHandle@4
-	mov		inputHandle, eax
-
-	;handle = GetStdHandle(-11)
-	push	-11
-	call	_GetStdHandle@4
-	mov		outputHandle, eax
-
-	;ReadConsole(handle, @buffer, numCharsToRead, &numCharsRead, null)
-	push	0
-	push	offset numCharsRead
-	push	numCharsToRead
 	push	offset readBuffer
-	push	inputHandle
-	call	_ReadConsoleA@20
+	push	offset numCharsRead
+	call	readLine
+	
 
 	;substract two from readBuffer result  - numCharsRead
 
