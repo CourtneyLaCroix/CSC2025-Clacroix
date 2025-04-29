@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\CSC225ProjectFinal\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\main.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\CSC225ProjectFinal\\readLine.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\readLine.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-CLaCroix\\CSC2025\\CSC225ProjectFinal\\atoi.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\atoi.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\readLine.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\readLine.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\writeLine.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\writeLine.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\itoa.asm||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{63B4A9FF-4A6C-44F0-B660-17C3C017AD48}|CSC225ProjectFinal\\CSC225ProjectFinal.vcxproj|solutionrelative:CSC225ProjectFinal\\itoa.asm||{8B382828-6202-11D1-8870-0000F87579D2}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,58 +22,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "atoi.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\atoi.asm",
-              "RelativeDocumentMoniker": "CSC225ProjectFinal\\atoi.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\atoi.asm",
-              "RelativeToolTip": "CSC225ProjectFinal\\atoi.asm",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-25T18:07:43.116Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "readLine.asm",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\readLine.asm",
               "RelativeDocumentMoniker": "CSC225ProjectFinal\\readLine.asm",
               "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\readLine.asm",
               "RelativeToolTip": "CSC225ProjectFinal\\readLine.asm",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAC4AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-27T23:11:15.638Z",
+              "WhenOpened": "2025-04-28T16:24:02.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "itoa.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\itoa.asm",
-              "RelativeDocumentMoniker": "CSC225ProjectFinal\\itoa.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\itoa.asm",
-              "RelativeToolTip": "CSC225ProjectFinal\\itoa.asm",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAABoAAAATAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "atoi.asm",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\atoi.asm",
+              "RelativeDocumentMoniker": "CSC225ProjectFinal\\atoi.asm",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\atoi.asm",
+              "RelativeToolTip": "CSC225ProjectFinal\\atoi.asm",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-25T20:29:03.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "writeLine.asm",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\writeLine.asm",
-              "RelativeDocumentMoniker": "CSC225ProjectFinal\\writeLine.asm",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\writeLine.asm",
-              "RelativeToolTip": "CSC225ProjectFinal\\writeLine.asm",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-25T18:08:33.522Z",
+              "WhenOpened": "2025-04-28T16:16:03.346Z",
               "EditorCaption": ""
             },
             {
@@ -92,9 +58,9 @@
               "RelativeDocumentMoniker": "CSC225ProjectFinal\\main.asm",
               "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\CSC225ProjectFinal\\main.asm",
               "RelativeToolTip": "CSC225ProjectFinal\\main.asm",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAABAVdU4/wsswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-25T18:08:17.827Z",
+              "WhenOpened": "2025-04-28T16:15:26.793Z",
               "EditorCaption": ""
             }
           ]
