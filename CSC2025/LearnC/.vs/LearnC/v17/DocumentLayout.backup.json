@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|solutionrelative:Pointers\\app.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|solutionrelative:Pointers\\app.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8AC9AF40-96C1-48F4-BCE8-60A24D8BB0A0}|Echo\\Echo.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Echo\\echo.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8AC9AF40-96C1-48F4-BCE8-60A24D8BB0A0}|Echo\\Echo.vcxproj|solutionrelative:Echo\\echo.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -19,12 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "app.c",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.c",
+              "RelativeDocumentMoniker": "Pointers\\app.c",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.c*",
+              "RelativeToolTip": "Pointers\\app.c*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-04-30T15:06:17Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.h",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.h",
+              "RelativeDocumentMoniker": "Pointers\\app.h",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.h*",
+              "RelativeToolTip": "Pointers\\app.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-30T15:10:54.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "echo.c",
               "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Echo\\echo.c",
               "RelativeDocumentMoniker": "Echo\\echo.c",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Echo\\echo.c*",
-              "RelativeToolTip": "Echo\\echo.c*",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Echo\\echo.c",
+              "RelativeToolTip": "Echo\\echo.c",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-04-28T15:22:36.8Z",
               "EditorCaption": ""
