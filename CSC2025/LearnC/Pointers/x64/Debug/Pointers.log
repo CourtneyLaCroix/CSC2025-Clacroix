@@ -1,2 +1,4 @@
 ﻿  app.c
+C:\Users\court\CSC2025-Clacroix\CSC2025\LearnC\Pointers\app.c(32,14): warning C4047: 'function': 'circle *' differs in levels of indirection from 'Circle **'
+C:\Users\court\CSC2025-Clacroix\CSC2025\LearnC\Pointers\app.c(32,14): warning C4024: 'init_circle': different types for formal and actual parameter 1
   Pointers.vcxproj -> C:\Users\court\CSC2025-Clacroix\CSC2025\LearnC\x64\Debug\Pointers.exe

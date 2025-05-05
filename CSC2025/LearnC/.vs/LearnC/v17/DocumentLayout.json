@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|solutionrelative:Pointers\\app.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BB3B96D1-5367-451F-9FED-B2699543CAA5}|LinkedList\\LinkedList.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB3B96D1-5367-451F-9FED-B2699543CAA5}|LinkedList\\LinkedList.vcxproj|solutionrelative:LinkedList\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E735D5A0-05EE-4C3C-9476-FE5B6A3CD444}|Pointers\\Pointers.vcxproj|solutionrelative:Pointers\\app.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BB3B96D1-5367-451F-9FED-B2699543CAA5}|LinkedList\\LinkedList.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\LinkedList.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB3B96D1-5367-451F-9FED-B2699543CAA5}|LinkedList\\LinkedList.vcxproj|solutionrelative:LinkedList\\LinkedList.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8AC9AF40-96C1-48F4-BCE8-60A24D8BB0A0}|Echo\\Echo.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Echo\\echo.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8AC9AF40-96C1-48F4-BCE8-60A24D8BB0A0}|Echo\\Echo.vcxproj|solutionrelative:Echo\\echo.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BB3B96D1-5367-451F-9FED-B2699543CAA5}|LinkedList\\LinkedList.vcxproj|C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\LinkedList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB3B96D1-5367-451F-9FED-B2699543CAA5}|LinkedList\\LinkedList.vcxproj|solutionrelative:LinkedList\\LinkedList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LinkedList.h",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\LinkedList.h",
+              "RelativeDocumentMoniker": "LinkedList\\LinkedList.h",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\LinkedList.h",
+              "RelativeToolTip": "LinkedList\\LinkedList.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-05T15:24:34.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "app.c",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.c",
-              "RelativeDocumentMoniker": "Pointers\\app.c",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.c",
-              "RelativeToolTip": "Pointers\\app.c",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAB8AAAAVAAAAAAAAAA==",
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\main.c",
+              "RelativeDocumentMoniker": "LinkedList\\main.c",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\main.c",
+              "RelativeToolTip": "LinkedList\\main.c",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-30T15:06:17Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-05-05T15:09:17.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "app.h",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.h",
-              "RelativeDocumentMoniker": "Pointers\\app.h",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Pointers\\app.h",
-              "RelativeToolTip": "Pointers\\app.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T15:10:54.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "echo.c",
-              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Echo\\echo.c",
-              "RelativeDocumentMoniker": "Echo\\echo.c",
-              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\Echo\\echo.c",
-              "RelativeToolTip": "Echo\\echo.c",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACoAAAAYAAAAAAAAAA==",
+              "Title": "LinkedList.c",
+              "DocumentMoniker": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\LinkedList.c",
+              "RelativeDocumentMoniker": "LinkedList\\LinkedList.c",
+              "ToolTip": "C:\\Users\\court\\CSC2025-Clacroix\\CSC2025\\LearnC\\LinkedList\\LinkedList.c",
+              "RelativeToolTip": "LinkedList\\LinkedList.c",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-28T15:22:36.8Z",
+              "WhenOpened": "2025-05-05T15:09:07.731Z",
               "EditorCaption": ""
             }
           ]
